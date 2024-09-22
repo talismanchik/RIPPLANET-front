@@ -1,0 +1,25 @@
+.candleContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 270px;
+  width: 270px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--secondary-color);
+
+  svg{
+    color: var(--secondary-color);
+  }
+
+  .coast {
+    position: absolute;
+    bottom: 11px;
+    right: 12px;
+
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 28.6px;
+    color: var(--secondary-color);
+  }
+}

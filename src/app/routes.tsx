@@ -3,7 +3,6 @@ import {ProfilesPage} from "../pages/profilesPage/profilesPage.tsx";
 import {ProfilesWithLikePage} from "../pages/profilesWithLikePage/profilesWithLikePage.tsx";
 import App from "./App.tsx";
 import {Candles} from "../pages/candles/candles.tsx";
-import {Feelings} from "../pages/feelings/feelings.tsx";
 import {NewDeceasedPerson} from "../pages/newDeceasedPerson/newDeceasedPerson.tsx";
 
 export const router = createBrowserRouter([
@@ -25,7 +24,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "feelings",
-                element: <Feelings/>,
+                element: <Candles/>,
             },
             {
                 path: "newDeceasedPerson",

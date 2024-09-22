@@ -2,10 +2,12 @@ import {Icon} from "../../components/ui/icon/icon.tsx";
 import s from './profileCard.module.scss'
 import {ProfileType} from "../../services/store.ts";
 
-type ProfileCard = ProfileType
-export const ProfileCard = ({age, country, name, nameEng, years, photo, like}: ProfileType) => {
+type ProfileCard = ProfileType & {
+    open: () => void
+}
+export const ProfileCard = ({age,open, country, name, nameEng, years, photo, like}: ProfileCard) => {
     return (
-        <div className={s.profileCardContainer}>
+        <div onClick={open} className={s.profileCardContainer}>
             <div className={s.profileCardImgWrapper}>
                 {
                     photo
@@ -19,7 +21,8 @@ export const ProfileCard = ({age, country, name, nameEng, years, photo, like}: P
                     <p>{nameEng}</p>
                 </div>
                 <div className={s.descriptionWrapper}>
-                    <p className={s.years}>{years} <span className={s.age}>({age})</span> <p className={s.country}>{country}</p></p>
+                    <p className={s.years}>{years} <span className={s.age}>({age})</span> <p
+                        className={s.country}>{country}</p></p>
                 </div>
                 <div className={s.candles}></div>
             </div>
