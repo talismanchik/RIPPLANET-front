@@ -1,0 +1,96 @@
+.navigateContainer {
+  position: fixed;
+  bottom: 0;
+  padding: 8px 30px;
+  background-color: var(--bg-color);
+  width: 100%;
+
+
+  .navList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    svg {
+      color: var(--secondary-color);
+
+    }
+
+    li {
+      svg {
+        &:hover {
+          cursor: pointer;
+          color: var(--accent-color);
+          transition: 0.2s;
+          scale: 1.05;
+        }
+      }
+    }
+
+    .homeWrapper {
+      fill-opacity: 0;
+
+
+      .active {
+        svg {
+          fill-opacity: 1;
+          color: var(--accent-color);
+          fill: var(--accent-color);
+        }
+      }
+    }
+
+    .candlesWrapper {
+
+      .active {
+        svg {
+          fill-opacity: 1;
+          color: var(--accent-color);
+          fill: var(--accent-color);
+        }
+      }
+    }
+
+    .newPersonWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      svg{
+        color: var(--bg-color);
+
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        svg {
+          color: var(--bg-color);
+        }
+      }
+    }
+
+    .likesWrapper {
+      fill-opacity: 0;
+
+      .active {
+        svg {
+          fill-opacity: 1;
+          color: var(--accent-color);
+          fill: var(--accent-color);
+        }
+      }
+    }
+
+    .burgerWrapper {
+
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}

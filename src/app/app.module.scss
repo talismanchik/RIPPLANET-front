@@ -1,0 +1,21 @@
+.gridContainer {
+  display: block;
+
+  .mainContainer {
+    background-color: var(--bg-color);
+    height: calc(100vh - 143px);
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    padding-inline: 24px;
+    .mainContainer {
+      border-radius: var(--border-radius);
+      height: calc(100vh - 137px);
+
+    }
+  }
+}

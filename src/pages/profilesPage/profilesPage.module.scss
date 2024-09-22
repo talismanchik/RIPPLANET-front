@@ -1,0 +1,18 @@
+.profilesPageContainer {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-inline: 15px;
+
+
+
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-inline: 32px;
+  }
+}

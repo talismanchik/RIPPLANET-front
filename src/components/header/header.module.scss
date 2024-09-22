@@ -1,0 +1,138 @@
+.headerContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 16px;
+
+  .logo {
+    display: none;
+    height: 65px;
+    margin-right: 40px;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+
+  .searcherContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    height: 55px;
+    width: 100%;
+    border-radius: var(--border-radius-m);
+
+    .searchInput {
+      padding: 16px;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 21px;
+
+      &::placeholder {
+        font-family: Montserrat, sans-serif;
+        opacity: 0.8;
+      }
+    }
+
+    .searchSettings {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .search {
+        padding-inline: 12px;
+
+        .svg {
+          color: var(--secondary-color);
+
+          &:hover {
+            cursor: pointer;
+          }
+          &:active {
+            scale: 0.95;
+          }
+        }
+      }
+
+      .filters {
+        position: relative;
+        padding-inline: 12px;
+
+        .svg {
+          color: var(--secondary-color);
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            scale: 0.95;
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 1px;
+          background-color: #6f728e1a;
+          left: 0;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      border-radius: var(--border-radius);
+      width: 50%;
+    }
+  }
+
+  .userMenu {
+    display: none;
+    background-color: var(--bg-color);
+    height: 55px;
+    border-radius: var(--border-radius);
+    position: absolute;
+    right: 24px;
+
+    .language {
+      margin-inline: 30px;
+
+      span {
+        color: var(--secondary-color);
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+
+
+      svg {
+        color: #3616b8;
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          scale: 0.95;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 24px;
+  }
+}

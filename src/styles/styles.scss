@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scrollbar-color: #888 #f5f5f5;
+  scrollbar-width: thin;
+}
+
+/* Links */
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: Montserrat, sans-serif;
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 16px;
+
+  @media (min-width: 1024px) {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}
+
+p {
+  font-size: 13px;
+  line-height: 15px;
+  @media (min-width: 1024px) {
+    font-size: 22px;
+    line-height: 27px;
+  }
+}
+span{
+  font-size: 12px;
+  line-height: 15px;
+
+  @media (min-width: 1024px) {
+    font-size: 23px;
+    line-height: 28px;
+  }
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #a1a3b2;
+  --bg-color: #fff;
+  --accent-color: #3616b8;
+  --border-radius: 30px;
+  --border-radius-m: 10px;
+}
+
+body {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://ripplanet.com/static/media/background.c46e39a067cd02a000a3.webp);
+
+  .container {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+
+  }
+}
