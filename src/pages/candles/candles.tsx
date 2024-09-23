@@ -1,15 +1,18 @@
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import s from "./candles.module.scss";
 import {Input} from "../../components/ui/input/input.tsx";
-import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
 import {candles, profilesHub} from "../../services/store.ts";
 import {ButtonLink} from "../../components/ui/buttonLink/buttonLink.tsx";
 import {useLocation} from "react-router-dom";
 import {useState} from "react";
 import {MarketContainer} from "../../features/marketContainer/marketContainer.tsx";
 import * as React from "react";
+import {useWindowWidth} from "../../components/hooks/useWindowWidth.ts";
+import {ProfileCard} from "../../features/profileCard/profileCard.tsx";
 
 export const Candles = () => {
+
+    const isVisible = useWindowWidth(1024)
 
     const [isOpenMarket, setIsOpenMarket] = useState(false)
     const closeMarketHandler = () => {
@@ -29,29 +32,48 @@ export const Candles = () => {
     const location = useLocation();
     return (
         <div className={s.candlesContainer}>
-            <PhoneHeader headerText={'За упокой'}/>
-            <div className={s.contentWrapper}>
-                <div className={s.buttonsWithSignature}>
-                    <ButtonLink className={`${s.item1} ${location.pathname === '/candles' ? s.active : ''}`}
-                                link={'/candles'} title={'Свечи'}/>
-                    <ButtonLink className={`${s.item2} ${location.pathname === '/feelings' ? s.active : ''}`}
-                                link={'/feelings'} title={'Чувства'}/>
-                    <div className={`${s.inputWrapper} ${s.item3}`}><Input placeholder={'Подпишите свою свечу'}/></div>
-                </div>
-                <div className={s.profilesWithSearch}>
+            <div className={s.candlesHeaderWrapper}>
+                <PhoneHeader headerText={'За упокой'}/>
+                <div className={s.contentWrapper}>
+                    <div className={s.buttonsWithSignature}>
+                        <ButtonLink className={`${s.item1} ${location.pathname === '/candles' ? s.active : ''}`}
+                                    link={'/candles'} title={'Свечи'}/>
+                        <ButtonLink className={`${s.item2} ${location.pathname === '/feelings' ? s.active : ''}`}
+                                    link={'/feelings'} title={'Чувства'}/>
+                        <div className={`${s.inputWrapper} ${s.item3}`}><Input placeholder={'Подпишите свою свечу'}/>
+                        </div>
+                    </div>
                     <p className={s.textHelper}>Выберите кому хотите отправить</p>
                     <div className={s.textAreaWrapper}>
                         <Input variant={"searchDecoration"} placeholder={'Поиск'}/>
                     </div>
-                    <ProfilesContainer open={openMarketHandler} profiles={profilesHub}/>
                 </div>
-                {isOpenMarket &&
-                    <div className={s.blurMode} onClick={handleOverlayClick}>
-                        <div className={s.marketWrapper}>
-                            <MarketContainer candles={candles} toClose={closeMarketHandler}/>
-                        </div>
+            </div>
+            <div className={s.profilesWrapper}>
+                <div className={s.textAreaWrapperInProfiles}>
+                    <Input variant={"searchDecoration"} placeholder={'Поиск'}/>
+                </div>
+                <div className={s.profilesContainer}>
+                    {profilesHub.map(profile => {
+                        return <ProfileCard name={profile.name}
+                                            years={profile.years}
+                                            age={profile.age}
+                                            country={profile.country}
+                                            like={profile.like}
+                                            open={openMarketHandler}/>
+                    })}
+                </div>
+                {/*<ProfilesContainer open={openMarketHandler} profiles={profilesHub}/>*/}
+            </div>
+            {isOpenMarket && !isVisible &&
+                <div className={`${s.blurMode}`} onClick={handleOverlayClick}>
+                    <div className={s.marketWrapper}>
+                        <MarketContainer candles={candles} toClose={closeMarketHandler}/>
                     </div>
-                }
+                </div>
+            }
+            <div className={s.marketWrapperForWeb}>
+                <MarketContainer candles={candles} toClose={closeMarketHandler}/>
             </div>
         </div>
     );

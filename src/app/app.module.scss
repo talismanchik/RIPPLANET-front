@@ -3,7 +3,8 @@
 
   .mainContainer {
     background-color: var(--bg-color);
-    height: calc(100vh - 143px);
+    height: calc(100% - 56px);
+    padding-bottom: 56px;
     overflow: hidden;
 
   }
@@ -16,7 +17,7 @@
     .mainContainer {
       border-radius: var(--border-radius);
       height: calc(100vh - 137px);
-
+      padding-bottom: 0;
     }
   }
 }

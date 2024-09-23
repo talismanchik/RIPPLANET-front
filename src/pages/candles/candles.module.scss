@@ -1,51 +1,56 @@
 .candlesContainer {
-  position: fixed;
-  top: 0;
+padding-top: 20px;
   background-color: var(--bg-color);
   width: 100%;
   overflow-y: auto;
-  height: calc(100% - 56px);
-
+  height: 100%;
+  overflow-x: hidden;
   padding-inline: var(--padding-inline-m);
 
-  .contentWrapper {
+  .candlesHeaderWrapper {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    padding-bottom: 1px;
+    z-index: 1;
 
-    .buttonsWithSignature {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 40px 55px;
-      gap: 8px;
+    .contentWrapper {
 
-      .item1 {
-        grid-column: 1;
-      }
+      .buttonsWithSignature {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40px 55px;
+        gap: 8px;
 
-      .item2 {
-        grid-column: 2;
-      }
+        .item1 {
+          grid-column: 1;
+        }
 
-      .item3 {
-        grid-column: 1 / -1;
-      }
+        .item2 {
+          grid-column: 2;
+        }
 
-      .inputWrapper {
+        .item3 {
+          grid-column: 1 / -1;
+        }
 
-      }
-
-      a.active {
-        color: var(--bg-color);
-
-        & div {
-          background-color: var(--secondary-color);
-
+        .inputWrapper {
 
         }
+
+        a.active {
+          color: var(--bg-color);
+
+          & div {
+            background-color: var(--secondary-color);
+
+
+          }
+        }
+
       }
-
     }
-  }
-
-  .profilesWithSearch {
 
     .textHelper {
       text-align: center;
@@ -53,16 +58,56 @@
       font-weight: 700;
       font-family: Montserrat, sans-serif;
       padding-block: 20px 12px;
+
+      @media (min-width: 1024px) {
+        display: none;
+      }
     }
 
     .textAreaWrapper {
-      position: sticky;
-      z-index: 1;
-      top: 0;
+      width: 100%;
       padding-bottom: 24px;
       background-color: var(--bg-color);
+
+      @media (min-width: 1024px) {
+        display: none;
+      }
     }
   }
+
+  .profilesWrapper {
+    .textAreaWrapperInProfiles {
+      display: none;
+
+      @media (min-width: 1024px) {
+        display: block;
+      }
+    }
+
+    .profilesContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+
+      @media (min-width: 740px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (min-width: 1024px) {
+        padding-top: 20px;
+        height: calc( 1vh * 100 - 215px);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+      }
+    }
+  }
+
 
   .blurMode {
     z-index: 1;
@@ -70,22 +115,53 @@
     top: 0;
     right: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100% - 56px);
     background-color: rgba(0, 0, 0, 0.5);
 
 
     .marketWrapper {
-
+      width: 80%;
       position: fixed;
       right: 0;
       top: 0;
       height: 100%;
-      background-color: var(--bg-color);
+    }
+  }
+
+  .marketWrapperForWeb {
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1;
+
+    @media (max-width: 1024px) {
+      display: none;
     }
   }
 
 
   @media (min-width: 700px) {
     padding-inline: var(--padding-inline);
+  }
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 103px 1fr;
+    gap: 10px;
+
+    .candlesHeaderWrapper {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .profilesWrapper {
+      grid-column: 1;
+      grid-row: 1/-1;
+    }
+
+    .marketWrapperForWeb {
+      grid-column: 2;
+      grid-row: 2;
+    }
   }
 }

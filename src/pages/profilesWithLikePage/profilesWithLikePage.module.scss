@@ -1,5 +1,4 @@
 .profilesPageContainer {
-  position: relative;
   padding-inline: var(--padding-inline-m);
   background-color: var(--bg-color);
   overflow-y: auto;
@@ -8,12 +7,20 @@
   height: calc(100% - 56px);
   gap: 10px;
 
-  .textAreaWrapper {
+  .headerWrapper {
     position: sticky;
-    z-index: 1;
     top: 0;
-    padding-block: 24px;
     background-color: var(--bg-color);
+    padding-bottom: 1px;
+    z-index: 1;
+
+    .textAreaWrapper {
+      position: sticky;
+      z-index: 1;
+      top: 0;
+      padding-block: 24px;
+      background-color: var(--bg-color);
+    }
   }
 
   @media (min-width: 700px) {
@@ -22,5 +29,8 @@
   @media (max-width: 1024px) {
     position: fixed;
     top: 0;
+  }
+  @media (min-width: 1024px) {
+    height: 100%;
   }
 }

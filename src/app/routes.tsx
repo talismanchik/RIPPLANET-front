@@ -11,23 +11,23 @@ export const router = createBrowserRouter([
         element: <App/>,
         children:[
             {
-                path: "home",
+                path: "/home",
                 element: <ProfilesPage/>,
             },
             {
-                path: "profilesWithLike",
+                path: "/profilesWithLike",
                 element: <ProfilesWithLikePage/>,
             },
             {
-                path: "candles",
+                path: "/candles",
                 element: <Candles/>,
             },
             {
-                path: "feelings",
+                path: "/feelings",
                 element: <Candles/>,
             },
             {
-                path: "newDeceasedPerson",
+                path: "/newDeceasedPerson",
                 element: <NewDeceasedPerson/>,
             },
         ]
