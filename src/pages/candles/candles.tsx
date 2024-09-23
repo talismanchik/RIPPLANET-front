@@ -63,7 +63,6 @@ export const Candles = () => {
                                             open={openMarketHandler}/>
                     })}
                 </div>
-                {/*<ProfilesContainer open={openMarketHandler} profiles={profilesHub}/>*/}
             </div>
             {isOpenMarket && !isVisible &&
                 <div className={`${s.blurMode}`} onClick={handleOverlayClick}>

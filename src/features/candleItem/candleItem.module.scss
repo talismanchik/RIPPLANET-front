@@ -5,6 +5,8 @@
   justify-content: center;
   height: 270px;
   width: 270px;
+  max-width: 270px;
+  max-height: 270px;
   border-radius: var(--border-radius);
   border: 2px solid var(--secondary-color);
 
@@ -22,6 +24,5 @@
     line-height: 28.6px;
     color: var(--secondary-color);
   }
-
 
 }
