@@ -1,6 +1,6 @@
 import {profilesHub} from "../../services/store.ts";
 import s from './profilesWithLikePage.module.scss'
-import {Input} from "../../components/ui/input/input.tsx";
+import {Input} from "../../shared/ui/input/input.tsx";
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
 

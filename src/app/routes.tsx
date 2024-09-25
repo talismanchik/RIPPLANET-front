@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, Navigate} from "react-router-dom";
 import {ProfilesPage} from "../pages/profilesPage/profilesPage.tsx";
 import {ProfilesWithLikePage} from "../pages/profilesWithLikePage/profilesWithLikePage.tsx";
 import App from "./App.tsx";
@@ -11,11 +11,15 @@ export const router = createBrowserRouter([
         element: <App/>,
         children:[
             {
+                path: '',
+                element: <Navigate to="home" />,
+            },
+            {
                 path: "/home",
                 element: <ProfilesPage/>,
             },
             {
-                path: "/profilesWithLike",
+                path: "/profiles-with-like",
                 element: <ProfilesWithLikePage/>,
             },
             {
@@ -27,7 +31,7 @@ export const router = createBrowserRouter([
                 element: <Candles/>,
             },
             {
-                path: "/newDeceasedPerson",
+                path: "/new-deceased-person",
                 element: <NewDeceasedPerson/>,
             },
         ]

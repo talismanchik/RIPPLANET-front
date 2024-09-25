@@ -1,13 +1,13 @@
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import s from "./candles.module.scss";
-import {Input} from "../../components/ui/input/input.tsx";
+import {Input} from "../../shared/ui/input/input.tsx";
 import {candles, profilesHub} from "../../services/store.ts";
-import {ButtonLink} from "../../components/ui/buttonLink/buttonLink.tsx";
+import {ButtonLink} from "../../shared/ui/buttonLink/buttonLink.tsx";
 import {useLocation} from "react-router-dom";
 import {useState} from "react";
 import {MarketContainer} from "../../features/marketContainer/marketContainer.tsx";
 import * as React from "react";
-import {useWindowWidth} from "../../components/hooks/useWindowWidth.ts";
+import {useWindowWidth} from "../../shared/hooks/useWindowWidth.ts";
 import {ProfileCard} from "../../features/profileCard/profileCard.tsx";
 
 export const Candles = () => {

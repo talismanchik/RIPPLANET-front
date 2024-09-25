@@ -1,0 +1,41 @@
+.navigateContainer {
+  position: fixed;
+  bottom: 0;
+  padding: 8px 30px;
+  background-color: var(--bg-color);
+  width: 100%;
+
+
+  .itemsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .iconWrapper {
+      svg {
+        fill: var(--accent-color);
+        color: var(--secondary-color);
+        fill-opacity: 0;
+      }
+
+      :hover {
+        color: var(--accent-color);
+        svg{
+          transition: 0.1s;
+          scale: 1.1;
+        }
+      }
+    }
+
+    .active {
+      li svg {
+        color: var(--accent-color);
+        fill-opacity: 1;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}

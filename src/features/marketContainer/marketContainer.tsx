@@ -1,4 +1,4 @@
-import {Icon} from "../../components/ui/icon/icon.tsx";
+import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {CandleType} from "../../services/store.ts";
 import s from './marketContainer.module.scss'
 import {CandleItem} from "../candleItem/candleItem.tsx";

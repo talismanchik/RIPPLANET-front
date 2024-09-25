@@ -19,6 +19,7 @@ type Props = {
         | 'eye_outline'
         | 'eye_off_outline'
         | 'close'
+        | 'messenger'
     viewBox?: string
     width?: string
 }

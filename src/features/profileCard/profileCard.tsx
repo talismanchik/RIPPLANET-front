@@ -1,4 +1,4 @@
-import {Icon} from "../../components/ui/icon/icon.tsx";
+import {Icon} from "../../shared/ui/icon/icon.tsx";
 import s from './profileCard.module.scss'
 import {ProfileType} from "../../services/store.ts";
 

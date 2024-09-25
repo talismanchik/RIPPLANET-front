@@ -1,27 +1,12 @@
-import {Header} from "../components/header/header.tsx";
-import {Navigate} from "../components/navigate/navigate.tsx";
-import {Footer} from "../components/footer/footer.tsx";
+import {Header} from "../widgets/header/header.tsx";
+import {Footer} from "../widgets/footer/footer.tsx";
 import s from './app.module.scss';
 import {Outlet, useLocation} from "react-router-dom";
-import {useWindowWidth} from "../components/hooks/useWindowWidth.ts";
+import {useWindowWidth} from "../shared/hooks/useWindowWidth.ts";
+import {Navbar} from "../widgets/navbar/navbar.tsx";
 
 function App() {
     const location = useLocation();
-    /*const [isVisible, setIsVisible] = useState(false);
-
-    const handleResize = () => {
-        setIsVisible(window.innerWidth > 1024);
-    };
-
-    useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);*/
-
     const isVisible = useWindowWidth(1024)
 
     let showHeader = true
@@ -33,7 +18,8 @@ function App() {
     return <>
         {showHeader && <Header/>}
         <div className={s.gridContainer}>
-            <Navigate/>
+            {/*<Navigate/>*/}
+            <Navbar/>
             <main className={s.mainContainer}>
                 <Outlet/>
             </main>

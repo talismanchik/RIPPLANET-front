@@ -1,5 +1,5 @@
 import s from './header.module.scss'
-import {Icon} from "../ui/icon/icon.tsx";
+import {Icon} from "../../shared/ui/icon/icon.tsx";
 
 export const Header = () => {
     return (

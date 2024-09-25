@@ -1,0 +1,50 @@
+.newPersonWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+
+  &::before, &::after {
+    position: absolute;
+    content: '';
+    background-color: var(--bg-color);
+  }
+
+  &::before {
+    width: 2px;
+    height: 18px;
+  }
+
+  &::after {
+    width: 18px;
+    height: 2px;
+  }
+
+  &:hover {
+    &::before {
+      transition: 0.1s;
+      height: 20px;
+    }
+
+    &::after {
+      transition: 0.1s;
+      width: 20px;
+    }
+  }
+
+  &:active {
+    &::before {
+      transition: 0.1s;
+      height: 16px;
+    }
+
+    &::after {
+      transition: 0.1s;
+      width: 16px;
+    }
+  }
+}

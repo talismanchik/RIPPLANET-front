@@ -1,5 +1,5 @@
 import s from "./phoneHeader.module.scss";
-import {Icon} from "../../components/ui/icon/icon.tsx";
+import {Icon} from "../../shared/ui/icon/icon.tsx";
 
 type PhoneHeaderType = {
     headerText: string
