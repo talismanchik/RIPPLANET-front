@@ -1,24 +1,38 @@
+import koby from '../assets/images/accaunts/koby.jpg'
+import kennedy from '../assets/images/accaunts/kennedy.jpg'
+import ferrari from '../assets/images/accaunts/ferrary.jpg'
+import perry from '../assets/images/accaunts/perry.jpg'
+
 export const profilesHub: ProfileType[] = [
-    {name: 'User Name', nameEng: 'UserName', age: '1', years: '2000-2035', country: 'USA', like: true},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USAdsfsdafdsgsafghafhaagasfh', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: true},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: true},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: true},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: true},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: false},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: true},
-    {name: 'User Name', nameEng: 'UserName', age: '35', years: '2000-2035', country: 'USA', like: true},
+    {name: 'Пушкин Александр Сергеевич', nameEng: 'Pushkin Alexander Sergeyevich', age: '37', years: '1799 - 1837', country: 'Россия', like: true, isMyCard: true},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+    {name: 'Bryant Kobe', nameEng: 'Bryant Kobe', age: '59', years: '1978-2020', country: 'США', like: true, photo: koby},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+    {name: 'Bryant Kobe', nameEng: 'Bryant Kobe', age: '59', years: '1978-2020', country: 'США', like: true, photo: koby},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+    {name: 'Bryant Kobe', nameEng: 'Bryant Kobe', age: '59', years: '1978-2020', country: 'США', like: true, photo: koby},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+    {name: 'Bryant Kobe', nameEng: 'Bryant Kobe', age: '59', years: '1978-2020', country: 'США', like: true, photo: koby},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+    {name: 'Bryant Kobe', nameEng: 'Bryant Kobe', age: '59', years: '1978-2020', country: 'США', like: true, photo: koby},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+    {name: 'Bryant Kobe', nameEng: 'Bryant Kobe', age: '59', years: '1978-2020', country: 'США', like: true, photo: koby},
+    {name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
+    {name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
+    {name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
+
 ]
 
 
@@ -49,6 +63,7 @@ export type ProfileType = {
     age: string
     country: string
     like: boolean
+    isMyCard?: boolean
 }
 
 export type CandleType = {

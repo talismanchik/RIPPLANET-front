@@ -138,7 +138,7 @@ export const Filter = ({ setIsOpen}: FilterType) => {
 
 // data
 
-const tabData: TabItem[] = [
+export const tabData: TabItem[] = [
     {title: 'Живые', value: 'alive'},
     {title: 'Умершие', value: 'dead'}
 ]

@@ -53,7 +53,8 @@ p {
     line-height: 27px;
   }
 }
-span{
+
+/*span{
   font-size: 12px;
   line-height: 15px;
 
@@ -61,7 +62,7 @@ span{
     font-size: 23px;
     line-height: 28px;
   }
-}
+}*/
 
 ul, ul li {
   list-style: none;
@@ -121,8 +122,8 @@ legend {
 :root {
   --border-radius: 30px;
   --border-radius-m: 10px;
-  --padding-inline: 24px;
-  --padding-inline-m: 15px;
+  --padding: 24px;
+  --padding-m: 15px;
 
   --min-width: 1024px;
 }
@@ -132,7 +133,7 @@ body {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-image: url(https://ripplanet.com/static/media/background.c46e39a067cd02a000a3.webp);
+  background-image: url('src/assets/images/background/background.png');
 
   .container {
     position: relative;

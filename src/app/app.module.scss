@@ -1,15 +1,16 @@
 .gridContainer {
-  display: block;
-
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
   .mainContainer {
+    border-radius: var(--border-radius);
+    height: calc(100vh - 134px);
+    padding-bottom: 0;
     background-color: var(--color-bg);
-    height: calc(100% - 56px);
-    padding-bottom: 56px;
     overflow: hidden;
-
   }
 
-  @media (min-width: 1024px) {
+  /*@media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 100px 1fr;
     gap: 24px;
@@ -18,5 +19,5 @@
       height: calc(100vh - 137px);
       padding-bottom: 0;
     }
-  }
+  }*/
 }

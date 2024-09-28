@@ -25,6 +25,12 @@
     // не определён
   }
 }
+.titleSpecial{
+  @include typography(var(--font-size-special), var(--font-weight-regular), var(--line-height-special));
+}
+.titleSpecialBold{
+  @include typography(var(--font-size-special), var(--font-weight-bold), var(--line-height-special));
+}
 
 .headline {
   @include typography(var(--font-size-xxl), var(--font-weight-bold), var(--line-height-xl));

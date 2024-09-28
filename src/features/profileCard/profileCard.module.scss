@@ -1,122 +1,107 @@
 .profileCardContainer {
-  position: relative;
-  min-width: 320px;
-  max-width: 450px;
-  height: 150px;
-  cursor: pointer;
-
-  border-radius: var(--border-radius-m);
+  max-height: 240px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  box-sizing: border-box;
-  width: 100%;
-
+  border-radius: var(--border-radius-m);
+  overflow: hidden;
 
   .profileCardImgWrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 96px;
-    height: 96px;
-    min-width: 96px;
+    min-width: 180px;
+    max-width: 180px;
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
 
-    color: var(--color-accent);
-
-    @media (min-width: 1024px) {
-      width: 160px;
-      height: 160px;
-      min-width: 160px;
-
-      svg {
-        width: 90px;
-        height: 90px;
-      }
+    .image {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
     }
   }
 
   .profileCardBody {
+    padding-left: var(--padding);
+    width: calc(100% - 240px);
     height: 100%;
-    padding-right: 35px;
-    padding-block: 15px;
+
     display: flex;
-    flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-direction: column;
 
-    .nameWrapper {
-      padding: 16px;
+    .namesWrapper {
+      max-width: 100%;
+      overflow: hidden;
 
-      .name {
-
-      }
-
-      p {
-        opacity: 0.7;
-      }
-    }
-
-    .descriptionWrapper {
-      padding: 16px;
-
-      .years {
-
-
-      }
-
-      .age {
-        margin-inline: 10px;
-        opacity: 0.5;
-        font-family: Montserrat, sans-serif;
-      }
-
-      .country {
-        width: 150px;
+      .nameWrapper {
+        max-height: 58px;
         overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
         position: relative;
 
-        &::after {
-          position: absolute;
-          left: -5px;
-          top: 45%;
-          content: '';
-          width: 2px;
-          height: 2px;
-          background-color: var(--color-secondary-light-dark);
-          border-radius: 1px;
+        .name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: normal;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
         }
+      }
 
+      .nameEngWrapper {
+        .nameEng {
+          color: var(--color-text-gray);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
     }
+    .descriptionWrapper{
+      max-width: 100%;
+      overflow: hidden;
 
-    .candles {
-
+      .spansWrapper{
+        color: var(--color-text-gray);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        .years{
+          color: var(--color-text-dark);
+        }
+        .age{
+          color: var(--color-text-light-gray);
+        }
+        .country{
+          color: var(--color-text-gray);
+        }
+      }
     }
   }
 
+  .svgWrapper {
+    padding: 10px;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
+    .correcter {
+      color: var(--color-secondary-gray);
+    }
+  }
 
   &:hover {
-    //border: 1px solid var(--accent-color);
-    background-color: var(--color-secondary-gray);
-
-
-  }
-
-  &:active {
-    scale: 0.99;
-  }
-
-  @media (min-width: 1024px) {
-    height: 230px;
-    min-width: 400px;
-    max-width: 90%
-  }
-  @media (min-width: 1140px) {
-    max-width: calc(50% - 30px)
+    transition: 0.2s;
+    background-color: rgba(196, 196, 196, 0.5);
   }
 }

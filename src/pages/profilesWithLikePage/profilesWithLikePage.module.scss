@@ -10,17 +10,29 @@
   .headerWrapper {
     position: sticky;
     top: 0;
-    background-color: var(--color-bg);
     padding-bottom: 1px;
     z-index: 1;
 
-    .textAreaWrapper {
+    .searchBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: var(--padding-m);
       position: sticky;
       z-index: 1;
       top: 0;
-      padding-block: 24px;
-      background-color: var(--color-bg);
+      padding: var(--padding);
+
+      .tabSwitcher {
+      }
+
+      .searchInput {
+      }
     }
+
+    background: linear-gradient(0deg, transparent, var(--color-bg) 20%);
+
   }
 
   @media (min-width: 700px) {

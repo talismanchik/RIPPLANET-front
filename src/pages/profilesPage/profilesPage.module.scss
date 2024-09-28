@@ -1,42 +1,25 @@
 .profilesPageContainer {
+  position: relative;
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  padding-inline: var(--padding-inline-m);
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  padding-inline: var(--padding);
+  padding-bottom: var(--padding);
 
-  .switchContainer{
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-
-    .item{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      width: 200px;
-      border-radius: 20px;
-      padding-inline: 20px;
-      padding-block: 5px;
-    }
-
-    .left{
-      border: 1px solid #d3d3d3;
-    }
-    .right{
-      background-color: #d3d3d3;
-    }
-  }
-
-  @media (min-width: 700px) {
-    padding-inline: var(--padding-inline);
-
+  .tabSwitcher {
+    top: 0;
+    position: sticky;
+    padding-block: var(--padding);
+    background: linear-gradient(0deg, transparent, var(--color-bg) 30%);
+    z-index: 1;
   }
 }
+
+/*@media (min-width: 700px) {
+    padding-inline: var(--padding-inline);
+
+  }*/

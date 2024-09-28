@@ -1,7 +1,4 @@
 .likeWrapper {
-  position: absolute;
-  right: 15px;
-  top: 15px;
 
   &[data-islike = 'true'] {
     svg {
@@ -23,5 +20,14 @@
       width: 26px;
       height: 26px;
     }
+  }
+
+  &:hover{
+    scale: 1.1;
+    transition: 0.1s;
+  }
+  &:active{
+    scale: 0.9;
+    transition: 0.1s;
   }
 }

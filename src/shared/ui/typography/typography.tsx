@@ -12,6 +12,8 @@ type Props<T extends ElementType> = {
         | 'largeTitle1'
         | 'largeTitle2'
         | 'title'
+        | 'titleSpecial'
+        | 'titleSpecialBold'
         | 'headline'
         | 'body1'
         | 'body2'

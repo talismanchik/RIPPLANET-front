@@ -21,6 +21,7 @@ type Props = {
         | 'close'
         | 'messenger'
         | 'arrow_down'
+        | 'correcter'
     viewBox?: string
     width?: string
 }
