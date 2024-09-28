@@ -132,8 +132,8 @@ body {
   padding-inline: 20px;
   height: 100vh;
   background-size: cover;
-  background-position: center;
-  background-image: url('src/assets/images/background/background.png');
+  background: url('src/assets/images/background/background.png') center no-repeat;
+  background-size: cover;
 
   .container {
     position: relative;
