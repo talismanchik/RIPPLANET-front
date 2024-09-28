@@ -56,20 +56,20 @@ const iconsForNavBar: IconsForNavBarType[] = [
     },
     {
         iconId: 'messenger',
-        link: 'candles',
+        link: 'messenger',
         viewBox: '4 4.5 20 20',
         className: 'messengerWrapper',
     },
 
     {
         iconId: 'plaques',
-        link: 'candles',
+        link: 'messenger',
         viewBox: '-1 -1 38 38',
         className: 'plaquesWrapper',
     },
     {
         iconId: 'contactUs',
-        link: 'candles',
+        link: 'messenger',
         viewBox: '0 0 40 40',
         className: 'contactUsWrapper',
     },

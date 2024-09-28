@@ -1,5 +1,5 @@
 .likeWrapper {
-
+cursor: pointer;
   &[data-islike = 'true'] {
     svg {
       fill-opacity: 1;

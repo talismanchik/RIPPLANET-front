@@ -14,7 +14,7 @@
     height: 100%;
 
     .active {
-      li svg {
+      > li > svg {
         color: var(--color-accent);
         fill-opacity: 1;
       }

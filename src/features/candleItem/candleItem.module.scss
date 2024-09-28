@@ -1,17 +1,18 @@
 .candleContainer {
+  cursor: pointer;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 270px;
-  width: 270px;
+  height: 100%;
+  width: 100%;
   max-width: 270px;
   max-height: 270px;
   border-radius: var(--border-radius);
   border: 2px solid var(--color-secondary-gray);
+  overflow: hidden;
 
-  svg{
-    color: var(--color-text-gray);
+  .picture {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .coast {
@@ -25,4 +26,12 @@
     color: var(--color-text-gray);
   }
 
+}
+
+.active{
+  border-color: var(--color-accent);
+
+  .coast{
+    color: var(--color-accent);
+  }
 }

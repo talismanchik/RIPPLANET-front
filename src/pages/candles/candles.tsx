@@ -41,7 +41,8 @@ export const Candles = () => {
                                     link={'/candles'} title={'Свечи'}/>
                         <ButtonLink className={`${s.item2} ${location.pathname === '/feelings' ? s.active : ''}`}
                                     link={'/feelings'} title={'Чувства'}/>
-                        <div className={`${s.inputWrapper} ${s.item3}`}><Input placeholder={'Подпишите свою свечу'}/>
+                        <div className={`${s.inputWrapper} ${s.item3}`}>
+                            <Input placeholder={'Подпишите свою свечу'}/>
                         </div>
                     </div>
                     <p className={s.textHelper}>Выберите кому хотите отправить</p>
@@ -61,19 +62,22 @@ export const Candles = () => {
                                             age={profile.age}
                                             country={profile.country}
                                             like={profile.like}
-                                            open={openMarketHandler}/>
+                                            open={openMarketHandler}
+                                            photo={profile.photo}
+                                            nameEng={profile.nameEng}
+                                            isMyCard={profile.isMyCard}/>
                     })}
                 </div>
             </div>
             {isOpenMarket && !isVisible &&
                 <div className={`${s.blurMode}`} onClick={handleOverlayClick}>
                     <div className={s.marketWrapper}>
-                        <MarketContainer candles={candles} toClose={closeMarketHandler}/>
+                        <MarketContainer marketItems={candles} toClose={closeMarketHandler}/>
                     </div>
                 </div>
             }
             <div className={s.marketWrapperForWeb}>
-                <MarketContainer candles={candles} toClose={closeMarketHandler}/>
+                <MarketContainer marketItems={candles} toClose={closeMarketHandler}/>
             </div>
         </div>
     );

@@ -16,6 +16,8 @@ export const ProfilesWithLikePage = () => {
     const toOpen = () => {
 
     }
+
+    const FavoriteLikes = profilesHub.filter(profile=>profile.like)
     return (
         <div className={s.profilesPageContainer}>
             <div className={s.headerWrapper}>
@@ -25,7 +27,7 @@ export const ProfilesWithLikePage = () => {
                     <Input className={s.searchInput} variant={"searchDecoration"} placeholder={'Search'}/>
                 </div>
             </div>
-            <ProfilesContainer open={toOpen} profiles={profilesHub}/>
+            <ProfilesContainer open={toOpen} profiles={FavoriteLikes}/>
         </div>
     );
 };

@@ -2,12 +2,17 @@ import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {CandleType} from "../../services/store.ts";
 import s from './marketContainer.module.scss'
 import {CandleItem} from "../candleItem/candleItem.tsx";
+import {useState} from "react";
 
 type MarketContainerType = {
     toClose: () => void
-    candles: CandleType[]
+    marketItems: CandleType[]
 }
-export const MarketContainer = ({toClose, candles}: MarketContainerType) => {
+export const MarketContainer = ({toClose, marketItems}: MarketContainerType) => {
+    const [isActive, setIsActive] = useState('')
+    const setIsActiveHandler =(id: string)=> {
+        setIsActive(id)
+    }
     return (
         <div className={s.marketContainer}>
             <div className={s.marketHeader}>
@@ -17,8 +22,8 @@ export const MarketContainer = ({toClose, candles}: MarketContainerType) => {
                 <p className={s.textHelper}>Выберите свечу</p>
             </div>
             <div className={s.candlesContainer}>
-                {candles.map(candle => {
-                    return <CandleItem coast={candle.coast} picture={candle.picture}/>
+                {marketItems.map(candle => {
+                    return <CandleItem id={candle.id} isActive={isActive===candle.id} onChangeActive={setIsActiveHandler} coast={candle.coast} picture={candle.picture}/>
                 })}
             </div>
         </div>

@@ -6,9 +6,10 @@ import {useState} from "react";
 import {Typography} from "../../shared/ui/typography/typography.tsx";
 
 type ProfileCard = ProfileType & {
+    isMyCard: boolean
     open: () => void
 }
-export const ProfileCard = ({age, open, country, name, nameEng, years, photo, like}: ProfileCard) => {
+export const ProfileCard = ({age, open, country, name, nameEng, years, photo, like, isMyCard}: ProfileCard) => {
     const [isLike, setIsLike] = useState(like)
 
     return (
@@ -32,7 +33,7 @@ export const ProfileCard = ({age, open, country, name, nameEng, years, photo, li
                 </div>
                 <div className={s.descriptionWrapper}>
                     <Typography variant={'body1'} className={s.spansWrapper}>
-                        <span  className={s.years}>{years}</span>
+                        <span className={s.years}>{years}</span>
                         <span className={s.age}> ({age}) </span>
                         <span className={s.country}>{country} </span>
                     </Typography>
@@ -41,7 +42,11 @@ export const ProfileCard = ({age, open, country, name, nameEng, years, photo, li
             </div>
             <div className={s.svgWrapper}>
                 <Like isLike={isLike} setIsLike={setIsLike}/>
-                <Icon className={s.correcter} iconId={'correcter'} width={'26'} height={'26'} viewBox={'11 11 30 30'}/>
+
+                {isMyCard &&
+                    <Icon className={s.correcter} iconId={'correcter'} width={'26'} height={'26'}
+                          viewBox={'11 11 30 30'}/>
+                }
             </div>
 
         </div>

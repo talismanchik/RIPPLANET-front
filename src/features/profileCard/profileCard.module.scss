@@ -1,10 +1,12 @@
 .profileCardContainer {
   max-height: 240px;
+  min-height: 180px;
   width: 100%;
   display: flex;
   align-items: center;
   border-radius: var(--border-radius-m);
   overflow: hidden;
+  cursor: pointer;
 
   .profileCardImgWrapper {
     display: flex;
@@ -97,11 +99,21 @@
 
     .correcter {
       color: var(--color-secondary-gray);
+
+      &:hover{
+        scale: 1.1;
+        transition: 0.1s;
+      }
+      &:active{
+        scale: 0.9;
+        transition: 0.1s;
+      }
     }
   }
 
   &:hover {
-    transition: 0.2s;
+    scale: 1.01;
+    transition: 0.1s;
     background-color: rgba(196, 196, 196, 0.5);
   }
 }
