@@ -18,7 +18,6 @@ function App() {
     return <>
         {showHeader && <Header/>}
         <div className={s.gridContainer}>
-            {/*<Navigate/>*/}
             <Navbar/>
             <main className={s.mainContainer}>
                 <Outlet/>

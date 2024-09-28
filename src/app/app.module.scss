@@ -2,7 +2,7 @@
   display: block;
 
   .mainContainer {
-    background-color: var(--bg-color);
+    background-color: var(--color-bg);
     height: calc(100% - 56px);
     padding-bottom: 56px;
     overflow: hidden;
@@ -13,7 +13,6 @@
     display: grid;
     grid-template-columns: 100px 1fr;
     gap: 24px;
-    padding-inline: 24px;
     .mainContainer {
       border-radius: var(--border-radius);
       height: calc(100vh - 137px);

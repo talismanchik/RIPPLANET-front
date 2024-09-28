@@ -4,15 +4,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--secondary-color);
+  border: 1px solid var(--color-secondary-gray);
   border-radius: var(--border-radius-m);
   width: 100%;
 
   .input {
     width: 100%;
-    height: 53px;
-    padding-left: 16px;
+    height: 44px;
+    padding: 16px;
     font-family: Montserrat, sans-serif;
+    font-size: var(--font-size-xxl);
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none; /* Убирает стрелки в Chrome, Safari */
+      margin: 0; /* Убирает отступы */
+    }
+    -moz-appearance: textfield; /* Убирает стрелки в Firefox */
+
   }
 
   .searchSection {
@@ -21,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--secondary-color);
+    color: var(--color-secondary-gray);
 
     &::after{
       position: absolute;
@@ -29,7 +38,7 @@
       content: '';
       width: 1px;
       height: 35px;
-      background-color: var(--secondary-color);
+      background-color: var(--color-secondary-gray);
       opacity: 0.3;
     }
   }

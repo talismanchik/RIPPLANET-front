@@ -1,6 +1,6 @@
 .navBarContainer {
   width: 100px;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
   border-radius: var(--border-radius);
   padding-block: 44px;
   height: calc(100vh - 133px);
@@ -15,7 +15,7 @@
 
     .active {
       li svg {
-        color: var(--accent-color);
+        color: var(--color-accent);
         fill-opacity: 1;
       }
       .feelingsWrapper {
@@ -28,8 +28,8 @@
     .iconWrapper  {
 
       svg {
-        fill: var(--accent-color);
-        color: var(--secondary-color);
+        fill: var(--color-accent);
+        color: var(--color-text-gray);
         fill-opacity: 0;
 
       }
@@ -39,7 +39,7 @@
       }
 
       :hover {
-        color: var(--accent-color);
+        color: var(--color-accent);
       }
     }
     .plaquesWrapper, .contactUsWrapper, .messengerWrapper{

@@ -1,0 +1,17 @@
+.radioGroupContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+
+  .label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border: 1px solid var(--color-secondary-gray);
+    border-radius: var(--border-radius-m);
+    height: 44px;
+    gap: 8px;
+  }
+}

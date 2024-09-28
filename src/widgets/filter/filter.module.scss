@@ -1,0 +1,234 @@
+
+.filterContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: var(--color-bg);
+  z-index: 1;
+  padding: 10px 26px 24px;
+  width: 500px;
+
+  .filterHeader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+
+    .cross {
+      cursor: pointer;
+      position: relative;
+      width: 28px;
+      height: 28px;
+
+      &::after, &::before {
+
+        background-color: black;
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 22px;
+        border-radius: 1px;
+
+        &:hover {
+          transition: 0.2s;
+          width: 24px;
+        }
+      }
+
+      &::after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%) rotate(45deg);
+      }
+
+      &::before {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%) rotate(-45deg);
+      }
+
+      &:hover {
+        &::after, &::before {
+          transition: 0.2s;
+          width: 26px;
+        }
+      }
+
+      &:active {
+        &::after, &::before {
+          transition: 0.2s;
+          width: 18px;
+        }
+      }
+
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-secondary-gray);
+      opacity: 0.3;
+    }
+  }
+
+  .formContainer {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    padding-top: 24px;
+
+    .filterBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: flex-start;
+      gap: 8px;
+      width: 100%;
+
+      .blockWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+        width: 100%;
+
+        .centerSelect {
+          width: 100%;
+        }
+
+        .ageRange {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+
+          .ageRangeSpan {
+            color: var(--color-text-gray);
+          }
+
+          .input {
+            width: 104px;
+          }
+
+        }
+      }
+
+      .additionally {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-inline: 16px;
+        border: 1px solid var(--color-secondary-gray);
+        border-radius: var(--border-radius-m);
+
+
+        .additionallyBlock {
+          cursor: pointer;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .choiceButton {
+            cursor: pointer;
+            height: 47px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            color: var(--color-text-gray);
+            padding-right: 10px;
+
+
+
+            .arrowNext {
+              position: relative;
+
+              &::after{
+                content: '';
+                position: absolute;
+                left: 0; /* Отступ от правого края */
+                top: 50%;
+                transform: translateY(-50%) rotate(-45deg); /* Центрирование по вертикали */
+                border: solid var(--color-secondary-gray); /* Цвет стрелки */
+                border-width: 0 1px 1px 0; /* Стрелка вправо */
+                padding: 3px;
+              }
+
+
+            }
+
+            &:hover{
+              .arrowNext{
+                &::after {
+                  padding: 4px;
+                  transition: 0.1s;
+                }
+              }
+            }
+          }
+          &:hover> .choiceButton > p{
+            font-size: 16px;
+            transition: 0.2s;
+          }
+        }
+        & > :not(:last-child){
+          border-bottom: 1px solid var(--color-secondary-gray);
+        }
+      }
+
+    }
+
+    .buttonsWrapper{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+
+      .button{
+        width: 100%;
+        height: 46px;
+
+        &:hover > p {
+          font-size: 18px;
+          font-weight: 900;
+          transition: 0.2s;
+        }
+        &:active > p {
+          font-size: 16px;
+          transition: 0.2s;
+        }
+      }
+      .reset{
+        color: var(--color-text-gray);
+      }
+      .search{
+        color: var(--color-text-wite);
+        background-color: var(--color-accent);
+        border-radius: var(--border-radius);
+      }
+
+
+    }
+  }
+}
+
+.blurMode {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}

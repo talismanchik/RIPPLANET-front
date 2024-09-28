@@ -5,68 +5,73 @@
   line-height: $lineHeight;
 }
 
-.h1 {
-
-}
-
-.h2 {
-  @include typography(var(--font-size-xxxl), var(--font-weight-bold), var(--line-height-xl));
+.largeTitle1 {
+  @include typography(var(--font-size-xxxxxl), var(--font-weight-bold), var(--line-height-xxxxl));
   @media (max-width: 1024px) {
-    //пока не определён
-  }}
-
-.h3 {
-  @include typography(var(--font-size-xxl), var(--font-weight-bold), var(--line-height-l));
-  @media (max-width: 1024px) {
-    @include typography(var(--font-size-s), var(--line-height-s))
+    // не определён
   }
 }
 
-.h4 {
-  @include typography(var(--font-size-l), var(--font-weight-bold), var(--line-height-m));
+.largeTitle2 {
+  @include typography(var(--font-size-xxxxxl), var(--font-weight-regular), var(--line-height-xxxxxl));
   @media (max-width: 1024px) {
-    @include typography(var(--font-size-m), var(--font-weight-bold), var(--line-height-m));
+    // не определён
+  }
+}
+
+.title {
+  @include typography(var(--font-size-xxxxl), var(--font-weight-bold), var(--line-height-xxxl));
+  @media (max-width: 1024px) {
+    // не определён
+  }
+}
+
+.headline {
+  @include typography(var(--font-size-xxl), var(--font-weight-bold), var(--line-height-xl));
+  @media (max-width: 1024px) {
+    // не определён
   }
 }
 
 .body1 {
-  @include typography(var(--font-size-m), var(--font-weight-regular), var(--line-height-m));
+  @include typography(var(--font-size-xxxl), var(--font-weight-regular), var(--line-height-xl));
 }
 
 .body2 {
-  @include typography(var(--font-size-s), var(--font-weight-regular), var(--line-height-m));
+  @include typography(var(--font-size-xxl), var(--font-weight-regular), var(--line-height-l));
 }
 
-.subtitle1 {
+.callouts {
+  @include typography(var(--font-size-xl), var(--font-weight-regular), var(--line-height-l));
+}
+
+.head {
+  @include typography(var(--font-size-l), var(--font-weight-bold), var(--line-height-m));
+}
+
+.subhead {
+  @include typography(var(--font-size-l), var(--font-weight-regular), var(--line-height-l));
+}
+
+.head2 {
   @include typography(var(--font-size-m), var(--font-weight-bold), var(--line-height-m));
 }
 
-.subtitle2 {
-  @include typography(var(--font-size-s), var(--font-weight-bold), var(--line-height-m));
+.footnote {
+  @include typography(var(--font-size-m), var(--font-weight-regular), var(--line-height-m));
 }
 
-.caption {
-  @include typography(var(--font-size-xs), var(--font-weight-regular), var(--line-height-s));
+.caption1 {
+  @include typography(var(--font-size-s), var(--font-weight-regular), var(--line-height-s));
 }
 
-.overline {
-  @include typography(var(--font-size-xs), var(--font-weight-bold), var(--line-height-s));
+.caption1 {
+  @include typography(var(--font-size-xs), var(--font-weight-regular), var(--line-height-xs));
 }
 
-.link1,
-.link1:visited {
-  @include typography(var(--font-size-s), var(--font-weight-regular), var(--line-height-m));
-
-  cursor: pointer;
-  color: var(--color-info-500);
-  text-decoration: underline;
+.caption1 {
+  @include typography(var(--font-size-xxs), var(--font-weight-regular), var(--line-height-xxs));
 }
 
-.link2,
-.link2:visited {
-  @include typography(var(--font-size-xs), var(--font-weight-regular), var(--line-height-s));
 
-  cursor: pointer;
-  color: var(--color-info-500);
-  text-decoration: underline;
-}
+

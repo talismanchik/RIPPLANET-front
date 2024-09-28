@@ -1,7 +1,7 @@
 import s from './navbar.module.scss'
 import {NavLink, useLocation} from "react-router-dom";
 import {Icon} from "../../shared/ui/icon/icon.tsx";
-import {NewPersonButton} from "../../features/decorators/newPersonButton/newPersonButton.tsx";
+import {NewPersonButton} from "../../shared/decorators/newPersonButton/newPersonButton.tsx";
 
 export const Navbar = () => {
     const location = useLocation();
@@ -19,7 +19,7 @@ export const Navbar = () => {
                     )
                 })}
                 <NavLink to={'new-deceased-person'}>
-                    <NewPersonButton/>
+                    <NewPersonButton as='li'/>
                 </NavLink>
             </ul>
         </nav>

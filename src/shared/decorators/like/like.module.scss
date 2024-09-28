@@ -1,0 +1,27 @@
+.likeWrapper {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  &[data-islike = 'true'] {
+    svg {
+      fill-opacity: 1;
+      fill: var(--color-accent);
+      color: var(--color-accent);
+    }
+  }
+
+  svg {
+    fill-opacity: 0;
+    color: var(--color-secondary-gray);
+  }
+
+  @media (min-width: 1024px) {
+    width: 26px;
+    height: 26px;
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}

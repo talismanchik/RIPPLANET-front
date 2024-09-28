@@ -9,18 +9,20 @@ type Props<T extends ElementType> = {
     children?: ReactNode
     className?: string
     variant?:
+        | 'largeTitle1'
+        | 'largeTitle2'
+        | 'title'
+        | 'headline'
         | 'body1'
         | 'body2'
-        | 'caption'
-        | 'h1'
-        | 'h2'
-        | 'h3'
-        | 'h4'
-        | 'link1'
-        | 'link2'
-        | 'overline'
-        | 'subtitle1'
-        | 'subtitle2'
+        | 'callouts'
+        | 'head'
+        | 'subhead'
+        | 'head2'
+        | 'footnote'
+        | 'caption1'
+        | 'caption2'
+        | 'tab'
 } & ComponentPropsWithoutRef<T>
 
 export const Typography = <T extends ElementType = 'p'>(props: Props<T>) => {

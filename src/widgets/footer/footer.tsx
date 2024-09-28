@@ -1,9 +1,9 @@
 import s from './footer.module.scss'
 import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {Link, useLocation} from "react-router-dom";
-import {NewPersonButton} from "../../features/decorators/newPersonButton/newPersonButton.tsx";
+import {NewPersonButton} from "../../shared/decorators/newPersonButton/newPersonButton.tsx";
 import {useState} from "react";
-import {BurgerButton} from "../../features/decorators/burgerButton/burgerButton.tsx";
+import {BurgerButton} from "../../shared/decorators/burgerButton/burgerButton.tsx";
 
 export const Footer = () => {
     const [isOpen, setIsOpen] = useState(false)

@@ -8,10 +8,10 @@
   max-width: 270px;
   max-height: 270px;
   border-radius: var(--border-radius);
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--color-secondary-gray);
 
   svg{
-    color: var(--secondary-color);
+    color: var(--color-text-gray);
   }
 
   .coast {
@@ -22,7 +22,7 @@
     font-weight: 700;
     font-size: 26px;
     line-height: 28.6px;
-    color: var(--secondary-color);
+    color: var(--color-text-gray);
   }
 
 }

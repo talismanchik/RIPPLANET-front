@@ -26,6 +26,7 @@ export const Candles = () => {
 
     const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
         if (event.target === event.currentTarget) {
+            console.log(event.target === event.currentTarget)
             closeMarketHandler()
         }
     };

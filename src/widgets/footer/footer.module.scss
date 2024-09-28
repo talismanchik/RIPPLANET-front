@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 0;
   padding: 8px 30px;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
   width: 100%;
 
 
@@ -13,13 +13,13 @@
 
     .iconWrapper {
       svg {
-        fill: var(--accent-color);
-        color: var(--secondary-color);
+        fill: var(--color-accent);
+        color: var(--color-secondary-gray);
         fill-opacity: 0;
       }
 
       :hover {
-        color: var(--accent-color);
+        color: var(--color-accent);
         svg{
           transition: 0.1s;
           scale: 1.1;
@@ -29,7 +29,7 @@
 
     .active {
       li svg {
-        color: var(--accent-color);
+        color: var(--color-accent);
         fill-opacity: 1;
       }
     }

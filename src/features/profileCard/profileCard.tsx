@@ -1,11 +1,15 @@
 import {Icon} from "../../shared/ui/icon/icon.tsx";
 import s from './profileCard.module.scss'
 import {ProfileType} from "../../services/store.ts";
+import {Like} from "../../shared/decorators/like/like.tsx";
+import {useState} from "react";
 
 type ProfileCard = ProfileType & {
     open: () => void
 }
 export const ProfileCard = ({age,open, country, name, nameEng, years, photo, like}: ProfileCard) => {
+    const [isLike, setIsLike] = useState(like)
+
     return (
         <div onClick={open} className={s.profileCardContainer}>
             <div className={s.profileCardImgWrapper}>
@@ -26,9 +30,7 @@ export const ProfileCard = ({age,open, country, name, nameEng, years, photo, lik
                 </div>
                 <div className={s.candles}></div>
             </div>
-            <div className={s.likeWrapper} data-islike={like}>
-                <Icon iconId={'like'} width={'18'} height={'14px'} viewBox={'0 0 40 40'}/>
-            </div>
+            <Like isLike={isLike} setIsLike={setIsLike}/>
         </div>
     );
 };
