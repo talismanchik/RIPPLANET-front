@@ -1,12 +1,12 @@
 import {Icon} from "../../shared/ui/icon/icon.tsx";
-import {CandleType} from "../../services/store.ts";
+import {MemoryType} from "../../services/store.ts";
 import s from './marketContainer.module.scss'
 import {CandleItem} from "../candleItem/candleItem.tsx";
 import {useState} from "react";
 
 type MarketContainerType = {
     toClose: () => void
-    marketItems: CandleType[]
+    marketItems: MemoryType[]
 }
 export const MarketContainer = ({toClose, marketItems}: MarketContainerType) => {
     const [isActive, setIsActive] = useState('')

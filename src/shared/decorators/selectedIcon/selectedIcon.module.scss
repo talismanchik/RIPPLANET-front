@@ -1,0 +1,19 @@
+.selectedIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 1000px;
+  border: 2px solid var(--color-accent);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    width: 16px;
+    height: 8px;
+    border: solid var(--color-accent);
+    border-width: 0 0 2px 2px;
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+}

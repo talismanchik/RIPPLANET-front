@@ -1,9 +1,11 @@
-import { ChangeEvent, ComponentPropsWithoutRef, forwardRef } from 'react'
+import {ChangeEvent, ComponentPropsWithoutRef, forwardRef} from 'react'
 
 import s from './input.module.scss'
 import {Icon} from "../icon/icon.tsx";
+import {Typography} from "../typography/typography.tsx";
 
 export type InputProps = {
+    label?: string
     clearField?: () => void
     error?: string
     placeholder?: string
@@ -14,6 +16,7 @@ export type InputProps = {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
     (
         {
+            label,
             className,
             clearField,
             error,
@@ -26,7 +29,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         },
         ref
     ) => {
-       // const [closedEye, setClosedEye] = useState(true)
+        // const [closedEye, setClosedEye] = useState(true)
 
         const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
             onChange?.(e)
@@ -34,10 +37,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         }
 
         return (
-            <>
-                <div className={`${s.root} ${className}`}>
+            <div>
+                {label && <Typography variant={'body2'} className={s.label}>{label}</Typography>}
+                < div className={`${s.root} ${className}`}>
                     <input
-                        className={`${s.input} ${s[variant]} ${error ? 's.error!!!' : ''}` }
+                        className={`${s.input} ${s[variant]} ${error ? 's.error!!!' : ''}`}
                         placeholder={placeholder}
                         name={rest.name}
                         onChange={onChangeHandler}
@@ -53,7 +57,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                             onClick={() => {
                                 setClosedEye(prev => !prev)
                             }}
-                            type={'button'}
+                             type={'button'}
                         >
                             {closedEye ? (
                                 <Icon height={'20'} iconId={'eye_off_outline'} width={'20'} />
@@ -65,17 +69,17 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
                     {variant === 'searchDecoration' && (
                         <button className={s.searchSection} disabled={rest.disabled} type={'button'}>
-                            <Icon height={'35'} iconId={'search'} width={'35'} />
+                            <Icon height={'35'} iconId={'search'} width={'35'}/>
                         </button>
                     )}
                 </div>
 
-               {/* {error && (
+                {/* {error && (
                     <span className={s.errorCaption}>
                         {error}
                     </span>
                 )}*/}
-            </>
+            </div>
         )
     }
 )

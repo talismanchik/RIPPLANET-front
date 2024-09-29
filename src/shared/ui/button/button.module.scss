@@ -1,0 +1,41 @@
+.button {
+  all: unset;
+
+  cursor: pointer;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  padding: 12px 20px;
+
+  font-family: Montserrat, sans-serif;
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-xxl);
+  user-select: none;
+
+  border-radius: 1000px;
+
+
+  &:focus-visible {
+    outline: 2px solid var(--color-system-info);
+  }
+
+  &:hover {
+    p {
+      font-size: 17.5px;
+      transition: 0.1s;
+    }
+  }
+  &:active {
+    p {
+      font-size: 16.5px;
+      transition: 0.1s;
+    }
+  }
+}

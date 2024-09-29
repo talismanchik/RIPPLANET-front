@@ -1,7 +1,7 @@
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import s from "./candles.module.scss";
 import {Input} from "../../shared/ui/input/input.tsx";
-import {candles, profilesHub} from "../../services/store.ts";
+import {candles, feelings, profilesHub} from "../../services/store.ts";
 import {ButtonLink} from "../../shared/ui/buttonLink/buttonLink.tsx";
 import {useLocation} from "react-router-dom";
 import {useState} from "react";
@@ -11,8 +11,9 @@ import {useWindowWidth} from "../../shared/hooks/useWindowWidth.ts";
 import {ProfileCard} from "../../features/profileCard/profileCard.tsx";
 
 export const Candles = () => {
-
     const isVisible = useWindowWidth(1024)
+    const location = useLocation();
+    const memoryHub = location.pathname === '/candles'? candles: feelings
 
     const [isOpenMarket, setIsOpenMarket] = useState(false)
     const closeMarketHandler = () => {
@@ -30,7 +31,7 @@ export const Candles = () => {
             closeMarketHandler()
         }
     };
-    const location = useLocation();
+
     return (
         <div className={s.candlesContainer}>
             <div className={s.candlesHeaderWrapper}>
@@ -72,12 +73,12 @@ export const Candles = () => {
             {isOpenMarket && !isVisible &&
                 <div className={`${s.blurMode}`} onClick={handleOverlayClick}>
                     <div className={s.marketWrapper}>
-                        <MarketContainer marketItems={candles} toClose={closeMarketHandler}/>
+                        <MarketContainer marketItems={memoryHub} toClose={closeMarketHandler}/>
                     </div>
                 </div>
             }
             <div className={s.marketWrapperForWeb}>
-                <MarketContainer marketItems={candles} toClose={closeMarketHandler}/>
+                <MarketContainer marketItems={memoryHub} toClose={closeMarketHandler}/>
             </div>
         </div>
     );

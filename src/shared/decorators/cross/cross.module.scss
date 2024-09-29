@@ -1,0 +1,48 @@
+.cross {
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  height: 28px;
+
+  &::after, &::before {
+
+    background-color: black;
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 22px;
+    border-radius: 1px;
+
+    &:hover {
+      transition: 0.2s;
+      width: 24px;
+    }
+  }
+
+  &::after {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%) rotate(45deg);
+  }
+
+  &::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%) rotate(-45deg);
+  }
+
+  &:hover {
+    &::after, &::before {
+      transition: 0.2s;
+      width: 26px;
+    }
+  }
+
+  &:active {
+    &::after, &::before {
+      transition: 0.2s;
+      width: 18px;
+    }
+  }
+
+}

@@ -5,6 +5,8 @@ import {TabItem, TabSwitcher} from "../../shared/ui/tabSwitcher/tabSwitcher.tsx"
 import {useState} from "react";
 import {SelectSimple} from "../../shared/ui/select/selectSimple.tsx";
 import {RadioGroup} from "../../shared/ui/radioGroup/radioGroup.tsx";
+import {Cross} from "../../shared/decorators/cross/cross.tsx";
+import * as React from "react";
 
 type FilterType = {
     isOpen: boolean
@@ -45,14 +47,19 @@ export const Filter = ({ setIsOpen}: FilterType) => {
     const onChangeGenderHandler = (value: string) => {
         setGender(value);
     }
+    const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (event.target === event.currentTarget) {
+            setIsOpen()
+        }
+    };
 
     return (
         <>
-            <div className={s.blurMode}></div>
+            <div onClick={handleOverlayClick} className={s.blurMode}></div>
             <div className={s.filterContainer}>
                 <div className={s.filterHeader}>
                     <Typography variant={'largeTitle1'}>Фильтр</Typography>
-                    <button type={'button'} className={s.cross} onClick={setIsOpen}></button>
+                    <Cross onClose={setIsOpen}/>
                 </div>
                 <form className={s.formContainer}>
                     <TabSwitcher items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>

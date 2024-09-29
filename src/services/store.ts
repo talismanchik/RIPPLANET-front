@@ -23,6 +23,12 @@ import candle18 from '../assets/images/candles/candle18.webp'
 import candle19 from '../assets/images/candles/candle19.webp'
 import candle20 from '../assets/images/candles/candle20.webp'
 import candle21 from '../assets/images/candles/candle21.webp'
+import feelings1 from '../assets/images/feelings/feelings1.webp'
+import feelings2 from '../assets/images/feelings/feelings2.webp'
+import feelings3 from '../assets/images/feelings/feelings3.webp'
+import feelings4 from '../assets/images/feelings/feelings4.webp'
+import feelings5 from '../assets/images/feelings/feelings5.webp'
+import feelings6 from '../assets/images/feelings/feelings6.webp'
 export const profilesHub: ProfileType[] = [
     {name: 'Пушкин Александр Сергеевич', nameEng: 'Pushkin Alexander Sergeyevich', age: '37', years: '1799 - 1837', country: 'Россия', like: true, isMyCard: true},
     {isMyCard: false, name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
@@ -56,28 +62,36 @@ export const profilesHub: ProfileType[] = [
 ]
 
 
-export const candles: CandleType[] = [
+export const candles: MemoryType[] = [
     {id:'1', picture: candle1 },
     {id:'2', picture: candle2 },
-    {id:'3', picture: candle3, coast: '1 €'},
+    {id:'3', picture: candle3},
     {id:'4', picture: candle4, coast: '1 €'},
-    {id:'5', picture: candle5, coast: '2 €'},
-    {id:'6', picture: candle6, coast: '2 €'},
-    {id:'7', picture: candle7, coast: '3 €'},
-    {id:'8', picture: candle8, coast: '3 €'},
-    {id:'9', picture: candle9, coast: '4 €'},
-    {id:'10', picture: candle10, coast: '4 €'},
-    {id:'11', picture: candle11, coast: '5 €'},
-    {id:'12', picture: candle12, coast: '6 €'},
-    {id:'13', picture: candle13, coast: '6 €'},
-    {id:'14', picture: candle14, coast: '6 €'},
-    {id:'15', picture: candle15, coast: '6 €'},
-    {id:'16', picture: candle16, coast: '6 €'},
-    {id:'17', picture: candle17, coast: '6 €'},
-    {id:'18', picture: candle18, coast: '6 €'},
-    {id:'19', picture: candle19, coast: '6 €'},
-    {id:'20', picture: candle20, coast: '6 €'},
-    {id:'21', picture: candle21, coast: '6 €'},
+    {id:'5', picture: candle5, coast: '1 €'},
+    {id:'6', picture: candle6, coast: '1 €'},
+    {id:'7', picture: candle7, coast: '1 €'},
+    {id:'8', picture: candle8, coast: '1 €'},
+    {id:'9', picture: candle9, coast: '1 €'},
+    {id:'10', picture: candle10, coast: '2 €'},
+    {id:'11', picture: candle11, coast: '2 €'},
+    {id:'12', picture: candle12, coast: '2 €'},
+    {id:'13', picture: candle13, coast: '2 €'},
+    {id:'14', picture: candle14, coast: '2 €'},
+    {id:'15', picture: candle15, coast: '2 €'},
+    {id:'16', picture: candle16, coast: '2 €'},
+    {id:'17', picture: candle17, coast: '3 €'},
+    {id:'18', picture: candle18, coast: '3 €'},
+    {id:'19', picture: candle19, coast: '3 €'},
+    {id:'21', picture: candle21, coast: '3 €'},
+    {id:'20', picture: candle20, coast: '5 €'},
+]
+export const feelings: MemoryType[] = [
+    {id:'1', picture: feelings1 },
+    {id:'2', picture: feelings2 },
+    {id:'3', picture: feelings3},
+    {id:'4', picture: feelings4 },
+    {id:'5', picture: feelings5 },
+    {id:'6', picture: feelings6},
 ]
 
 export type ProfileType = {
@@ -91,7 +105,7 @@ export type ProfileType = {
     isMyCard: boolean
 }
 
-export type CandleType = {
+export type MemoryType = {
     picture: string
     coast?: string
     id: string

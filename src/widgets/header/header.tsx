@@ -10,11 +10,7 @@ export const Header = () => {
         setIsOpen(!isOpen)
     }
 
-   /* const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
-        if (event.target === event.currentTarget) {
-            setIsOpenHandler()
-        }
-    };*/
+
     const setValueHandler = (e: ChangeEvent<HTMLInputElement>)=>{
         setValue(e.currentTarget.value)
     }

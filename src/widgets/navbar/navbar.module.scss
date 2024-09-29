@@ -42,6 +42,12 @@
         color: var(--color-accent);
       }
     }
+    .popupActive{
+      svg{
+        color: var(--color-accent);
+        opacity: 1;
+      }
+    }
     .plaquesWrapper, .contactUsWrapper, .messengerWrapper{
       svg{
         fill-opacity: 1;
@@ -51,7 +57,7 @@
 
   }
 
-  @media (max-width: 1024px) {
+  /*@media (max-width: 1024px) {
     display: none;
-  }
+  }*/
 }

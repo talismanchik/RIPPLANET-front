@@ -1,13 +1,17 @@
 .profilesPageContainer {
-  padding-inline: var(--padding-inline-m);
-  background-color: var(--color-bg);
-  overflow-y: auto;
-  justify-items: center;
+  position: relative;
+  height: 100% ;
   width: 100%;
-  height: calc(100% - 56px);
-  gap: 10px;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-inline: var(--padding);
+  padding-bottom: var(--padding-m);
 
   .headerWrapper {
+    width: 100%;
     position: sticky;
     top: 0;
     padding-bottom: 1px;
