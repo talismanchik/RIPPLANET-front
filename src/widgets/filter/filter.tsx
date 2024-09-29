@@ -137,7 +137,7 @@ export const Filter = ({setIsOpen}: FilterType) => {
                     <div className={s.buttonsWrapper}>
                         <button type={'reset'} className={`${s.button} ${s.reset}`}><Typography
                             variant={'body2'}>Сбросить</Typography></button>
-                        <Button>
+                        <Button type={'reset'}>
                             <Typography variant={'body2'}>Поиск</Typography>
                         </Button>
                     </div>

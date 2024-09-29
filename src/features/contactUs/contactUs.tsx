@@ -12,7 +12,7 @@ export const ContactUs = () => {
             <Input type={"email"} placeholder={'name@example.com'} label={'E-mail'}/>
             <Input type={'tel'} placeholder={'Номер телефона'} label={'Номер телефона'}/>
             <Textarea label={'текст'}/>
-            <Button type={'submit'}><Typography variant={'body2'}>Отправить</Typography></Button>
+            <Button type={'reset'}><Typography variant={'body2'}>Отправить</Typography></Button>
         </form>
     );
 };
