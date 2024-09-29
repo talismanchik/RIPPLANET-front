@@ -4,6 +4,7 @@
   cursor: pointer;
   background-color: var(--color-accent);
   color: var(--color-bg);
+  width: 100%;
 
   display: inline-flex;
   gap: 10px;
@@ -28,7 +29,7 @@
 
   &:hover {
     p {
-      font-size: 17.5px;
+      font-size: 18.5px;
       transition: 0.1s;
     }
   }

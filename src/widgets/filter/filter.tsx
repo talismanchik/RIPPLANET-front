@@ -7,12 +7,13 @@ import {SelectSimple} from "../../shared/ui/select/selectSimple.tsx";
 import {RadioGroup} from "../../shared/ui/radioGroup/radioGroup.tsx";
 import {Cross} from "../../shared/decorators/cross/cross.tsx";
 import * as React from "react";
+import {Button} from "../../shared/ui/button/button.tsx";
 
 type FilterType = {
     isOpen: boolean
     setIsOpen: () => void
 }
-export const Filter = ({ setIsOpen}: FilterType) => {
+export const Filter = ({setIsOpen}: FilterType) => {
     const [tab, setTab] = useState('alive')
     const [dateOfBirthday, setDateOfBirthday] = useState('')
     const [dateOfDead, setDateOfDead] = useState('')
@@ -134,8 +135,11 @@ export const Filter = ({ setIsOpen}: FilterType) => {
                         </ul>
                     </div>
                     <div className={s.buttonsWrapper}>
-                        <button type={'reset'} className={`${s.button} ${s.reset}`}><Typography variant={'body2'}>Сбросить</Typography></button>
-                        <button className={`${s.button} ${s.search}`}><Typography variant={'body2'}>Поиск</Typography></button>
+                        <button type={'reset'} className={`${s.button} ${s.reset}`}><Typography
+                            variant={'body2'}>Сбросить</Typography></button>
+                        <Button>
+                            <Typography variant={'body2'}>Поиск</Typography>
+                        </Button>
                     </div>
                 </form>
             </div>
