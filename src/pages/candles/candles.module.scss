@@ -84,23 +84,10 @@
     }
   }
 
-  .profilesWrapper {
-    grid-area: profiles;
-    grid-column: 1;
-
-    .textAreaWrapperInProfiles {
-      padding-bottom: var(--padding);
-    }
-
-    .profilesContainer {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      height: calc(100% - 70px);
-      overflow-y: auto;
-      overflow-x: hidden;
-    }
-  }
+ .profilesGrid{
+   grid-area: profiles;
+   grid-column: 1;
+ }
 
 
   .blurMode {

@@ -77,10 +77,9 @@ const iconsForNavBar: IconsForNavBarType[] = [
         viewBox: '4 4.5 20 20',
         className: 'messengerWrapper',
     },
-
     {
         iconId: 'plaques',
-        link: 'messenger',
+        link: 'plaques',
         viewBox: '-1 -1 38 38',
         className: 'plaquesWrapper',
     },

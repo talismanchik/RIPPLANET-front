@@ -1,4 +1,6 @@
 .profileCardContainer {
+  margin: 5px;
+  position: relative;
   max-height: 240px;
   min-height: 180px;
   width: 100%;
@@ -7,6 +9,7 @@
   border-radius: var(--border-radius-m);
   overflow: hidden;
   cursor: pointer;
+  box-sizing: border-box;
 
   .profileCardImgWrapper {
     display: flex;
@@ -116,4 +119,10 @@
     transition: 0.1s;
     background-color: rgba(196, 196, 196, 0.5);
   }
+}
+.activeContainer{
+  border: 1px solid var(--color-accent);
+}
+.selectedIcon{
+  composes: selectedItem from '../../app/styles/templates.module.scss';
 }

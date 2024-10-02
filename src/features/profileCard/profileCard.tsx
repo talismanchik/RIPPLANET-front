@@ -4,16 +4,18 @@ import {ProfileType} from "../../services/store.ts";
 import {Like} from "../../shared/decorators/like/like.tsx";
 import {useState} from "react";
 import {Typography} from "../../shared/ui/typography/typography.tsx";
+import {SelectedIcon} from "../../shared/decorators/selectedIcon/selectedIcon.tsx";
 
-type ProfileCard = ProfileType & {
+type Props = ProfileType & {
     isMyCard: boolean
-    open: () => void
+    onChange?: (id: string)=>void
+    isActive?: boolean
 }
-export const ProfileCard = ({age, open, country, name, nameEng, years, photo, like, isMyCard}: ProfileCard) => {
+export const ProfileCard = ({onChange, isActive, age, id, country, name, nameEng, years, photo, like, isMyCard}: Props) => {
     const [isLike, setIsLike] = useState(like)
 
     return (
-        <div onClick={open} className={s.profileCardContainer}>
+        <div onClick={()=>onChange!=null && onChange(id)} className={`${s.profileCardContainer} ${isActive? s.activeContainer : ''}`}>
             <div className={s.profileCardImgWrapper}>
                 {
                     photo
@@ -41,14 +43,14 @@ export const ProfileCard = ({age, open, country, name, nameEng, years, photo, li
                 <div className={s.candles}></div>
             </div>
             <div className={s.svgWrapper}>
-                <Like isLike={isLike} setIsLike={setIsLike}/>
-
+                {!isActive && <Like isLike={isLike} setIsLike={setIsLike}/>
+                }
                 {isMyCard &&
                     <Icon className={s.correcter} iconId={'correcter'} width={'26'} height={'26'}
                           viewBox={'11 11 30 30'}/>
                 }
             </div>
-
+            {isActive && <SelectedIcon className={s.selectedIcon}/>}
         </div>
     );
 };

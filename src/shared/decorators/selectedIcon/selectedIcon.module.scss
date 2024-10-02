@@ -4,6 +4,7 @@
   border-radius: 1000px;
   border: 2px solid var(--color-accent);
   position: relative;
+  background-color: var(--color-bg);
 
   &::after {
     content: '';

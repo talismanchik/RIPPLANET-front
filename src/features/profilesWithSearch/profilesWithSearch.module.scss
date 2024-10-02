@@ -1,0 +1,16 @@
+.profilesWrapper {
+  height: 100%;
+  overflow-y: auto;
+  .textAreaWrapperInProfiles {
+    padding-bottom: var(--padding);
+  }
+
+  .profilesContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: calc(100% - 70px);
+    overflow-x: hidden;
+    padding-right: 10px;
+  }
+}

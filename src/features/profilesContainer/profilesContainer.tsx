@@ -11,7 +11,7 @@ export const ProfilesContainer = ({profiles, open, className}:ProfilesContainerT
     return (
         <div className={`${s.profilesContainer} ${className}`}>
             {profiles.map(profile => {
-                return <ProfileCard isMyCard={profile.isMyCard} open={open} name={profile.name} years={profile.years} age={profile.age}
+                return <ProfileCard id={profile.id} isMyCard={profile.isMyCard} onChange={open} name={profile.name} years={profile.years} age={profile.age}
                                     country={profile.country} nameEng={profile.nameEng} photo={profile.photo}
                                     like={profile.like}/>
             })}

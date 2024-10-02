@@ -8,21 +8,21 @@ import {useState} from "react";
 import {MarketContainer} from "../../features/marketContainer/marketContainer.tsx";
 import * as React from "react";
 import {useWindowWidth} from "../../shared/hooks/useWindowWidth.ts";
-import {ProfileCard} from "../../features/profileCard/profileCard.tsx";
+import {ProfilesWithSearch} from "../../features/profilesWithSearch/profilesWithSearch.tsx";
 
 export const Candles = () => {
     const isVisible = useWindowWidth(1024)
     const location = useLocation();
-    const memoryHub = location.pathname === '/candles'? candles: feelings
+    const memoryHub = location.pathname === '/candles' ? candles : feelings
 
     const [isOpenMarket, setIsOpenMarket] = useState(false)
+    const [activeProfile, setActiveProfile] = useState('')
     const closeMarketHandler = () => {
         setIsOpenMarket(false)
-        console.log('market close')
     }
-    const openMarketHandler = () => {
+    const onClickProfileHandler = (id: string) => {
         setIsOpenMarket(true)
-        console.log('market open')
+        setActiveProfile(id)
     }
 
     const handleOverlayClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -52,24 +52,10 @@ export const Candles = () => {
                     </div>
                 </div>
             </div>
-            <div className={s.profilesWrapper}>
-                <div className={s.textAreaWrapperInProfiles}>
-                    <Input variant={"searchDecoration"} placeholder={'Поиск'}/>
-                </div>
-                <div className={s.profilesContainer}>
-                    {profilesHub.map(profile => {
-                        return <ProfileCard name={profile.name}
-                                            years={profile.years}
-                                            age={profile.age}
-                                            country={profile.country}
-                                            like={profile.like}
-                                            open={openMarketHandler}
-                                            photo={profile.photo}
-                                            nameEng={profile.nameEng}
-                                            isMyCard={profile.isMyCard}/>
-                    })}
-                </div>
-            </div>
+            <ProfilesWithSearch className={s.profilesGrid}
+                                activeProfile={activeProfile}
+                                onChange={onClickProfileHandler}
+                                profiles={profilesHub}/>
             {isOpenMarket && !isVisible &&
                 <div className={`${s.blurMode}`} onClick={handleOverlayClick}>
                     <div className={s.marketWrapper}>

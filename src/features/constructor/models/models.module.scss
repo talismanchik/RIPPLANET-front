@@ -1,0 +1,74 @@
+.modelsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+  padding-right: 10px;
+  overflow-y: auto;
+
+  .modelContainer {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 340px 40px;
+    position: relative;
+    border: 1px solid var(--color-secondary-light-blue);
+    border-radius: var(--border-radius);
+    transition: 0.2s;
+
+    .imgWrapper {
+      padding: 10px;
+
+      .img {
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .info {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+
+      .coast {
+        color: var(--color-text-light-blue);
+      }
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active{
+      .imgWrapper{
+        padding: 12px;
+      }
+    }
+  }
+
+  .activeModel {
+    border-color: var(--color-accent);
+
+    .info {
+      .coast, .modelTitle {
+        color: var(--color-accent);
+      }
+    }
+
+  }
+}
+
+.selectedItem {
+  composes: selectedItem from '../../../app/styles/templates.module.scss';
+}

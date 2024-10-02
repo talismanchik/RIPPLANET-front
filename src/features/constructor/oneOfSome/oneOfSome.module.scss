@@ -1,0 +1,50 @@
+.fasteningsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  padding-right: 10px;
+
+  .fastening {
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--color-text-light-blue);
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: 53px;
+    padding: 8px;
+    width: 180px;
+    min-width: 165px;
+
+    .fasteningTitle{
+
+    }
+
+    .fasteningCoast{
+      color: var(--color-text-light-blue);
+    }
+
+    &:active{
+      .fasteningTitle, .fasteningCoast{
+        transition: 0.1s;
+        scale: 0.95;
+
+      }
+    }
+  }
+  .activeFastening{
+    border-color: var(--color-accent);
+    .fasteningTitle{
+      color: var(--color-accent);
+    }
+  }
+}
+
+.selectedItem{
+  composes: selectedItem from '../../../app/styles/templates.module.scss';
+}

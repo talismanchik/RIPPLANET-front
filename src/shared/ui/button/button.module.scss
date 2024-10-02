@@ -28,14 +28,14 @@
   }
 
   &:hover {
-    p {
-      font-size: 18.5px;
+   & > * {
+      font-size: 20px;
       transition: 0.1s;
     }
   }
   &:active {
-    p {
-      font-size: 16.5px;
+    & > * {
+      font-size: 18.5px;
       transition: 0.1s;
     }
   }

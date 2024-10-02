@@ -19,6 +19,7 @@ type Props<T extends ElementType> = {
         | 'body2'
         | 'callouts'
         | 'head'
+        | 'head1'
         | 'subhead'
         | 'head2'
         | 'footnote'

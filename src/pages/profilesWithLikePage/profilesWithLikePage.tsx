@@ -23,8 +23,8 @@ export const ProfilesWithLikePage = () => {
             <div className={s.headerWrapper}>
                 <PhoneHeader headerText={'Favorites'}/>
                 <div className={s.searchBlock}>
-                    <TabSwitcher className={s.tabSwitcher} items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>
                     <Input className={s.searchInput} variant={"searchDecoration"} placeholder={'Search'}/>
+                    <TabSwitcher className={s.tabSwitcher} items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>
                 </div>
             </div>
             <ProfilesContainer open={toOpen} profiles={FavoriteLikes}/>

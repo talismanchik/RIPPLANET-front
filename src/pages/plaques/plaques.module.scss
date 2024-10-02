@@ -1,0 +1,9 @@
+.plaquesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  gap: var(--padding);
+  padding: var(--padding);
+  padding-bottom: var(--padding-m);
+  overflow: hidden;
+}

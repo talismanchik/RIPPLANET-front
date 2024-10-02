@@ -51,6 +51,10 @@
   @include typography(var(--font-size-xl), var(--font-weight-regular), var(--line-height-l));
 }
 
+.head1 {
+  @include typography(var(--font-size-xxxl), var(--font-weight-bold), var(--line-height-xxl));
+}
+
 .head {
   @include typography(var(--font-size-l), var(--font-weight-bold), var(--line-height-m));
 }

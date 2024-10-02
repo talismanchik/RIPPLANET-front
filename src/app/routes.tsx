@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import {Candles} from "../pages/candles/candles.tsx";
 import {NewDeceasedPerson} from "../pages/newDeceasedPerson/newDeceasedPerson.tsx";
 import {Messenger} from "../pages/messenger/messenger.tsx";
+import {Plaques} from "../pages/plaques/plaques.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: "/messenger",
                 element: <Messenger/>,
+            },
+            {
+                path: "/plaques",
+                element: <Plaques/>,
             },
             {
                 path: "/new-deceased-person",
