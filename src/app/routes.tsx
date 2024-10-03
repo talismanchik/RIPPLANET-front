@@ -6,6 +6,10 @@ import {Candles} from "../pages/candles/candles.tsx";
 import {NewDeceasedPerson} from "../pages/newDeceasedPerson/newDeceasedPerson.tsx";
 import {Messenger} from "../pages/messenger/messenger.tsx";
 import {Plaques} from "../pages/plaques/plaques.tsx";
+import {UserProfile} from "../pages/userProfile/userProfile.tsx";
+import {EditProfile} from "../widgets/userProfileBlocks/editProfile/editProfile.tsx";
+import {CreatedProfiles} from "../widgets/userProfileBlocks/createdProfiles/createdProfiles.tsx";
+import {Payment} from "../widgets/userProfileBlocks/payment/payment.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +47,24 @@ export const router = createBrowserRouter([
             {
                 path: "/new-deceased-person",
                 element: <NewDeceasedPerson/>,
+            },
+            {
+                path: "/userProfile",
+                element: <UserProfile/>,
+                children:[
+                    {
+                        path: 'edit-profile',
+                        element: <EditProfile/>
+                    },
+                    {
+                        path: 'created-profiles',
+                        element: <CreatedProfiles/>
+                    },
+                    {
+                        path: 'payment',
+                        element: <Payment/>
+                    },
+                ]
             },
         ]
     },

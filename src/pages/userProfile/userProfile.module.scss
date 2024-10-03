@@ -1,0 +1,192 @@
+.userProfileContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-image: url('../../assets/images/background/userProfileBG.png');
+  background-position: 100%;
+  background-repeat: no-repeat;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  padding: var(--padding);
+
+  .blockContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .linkToBack {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      height: 44px;
+      color: var(--color-text-light-blue);
+
+      .arrowBack {
+        position: relative;
+        padding-right: 8px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+          border: solid var(--color-secondary-light-blue);
+          border-width: 1px 0 0 1px;
+          padding: 3px;
+        }
+      }
+    }
+
+    .title {
+      margin-block: 28px 40px;
+      color: var(--color-accent);
+    }
+
+    .block {
+      width: 100%;
+      margin-bottom: 32px;
+      cursor: context-menu;
+
+      .blockWrapper {
+        margin-top: 8px;
+        border: 1px solid var(--color-secondary-light-blue);
+        border-radius: var(--border-radius-m);
+
+        .link {
+          box-sizing: border-box;
+          width: 100%;
+          padding-inline: 16px;
+          height: 53px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .blockItem {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            .blockTitle {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 17px;
+
+              svg {
+                color: var(--color-secondary-light-blue);
+              }
+
+              .fill {
+                fill: var(--color-secondary-light-blue);
+              }
+            }
+          }
+        }
+        .active:not(:last-child){
+          border-bottom: 1px solid var(--color-secondary-light-blue);
+        }
+        .active:not(:first-child){
+          border-top: 1px solid var(--color-secondary-light-blue);
+        }
+
+        .link:not(.active):not(:first-child),
+        .link.active + .link:not(.active) {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 1px;
+            width: calc(100% - 30px);
+            background-color: var(--color-secondary-light-gray);
+          }
+        }
+        .link.active + .link:not(.active){
+          &::after{
+            background: none;
+            height: 0;
+          }
+        }
+      }
+    }
+
+    .logout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 53px;
+      width: 100%;
+      padding-inline: 16px;
+      border: 1px solid var(--color-secondary-light-blue);
+      border-radius: var(--border-radius-m);
+
+      .logoutTitle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .leftBlockContainer {
+    width: 458px;
+  }
+  .rightBlockContainer{
+    padding-top: 60px;
+  }
+}
+
+.arrowForward {
+  position: relative;
+  padding-right: 12px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    border: solid var(--color-secondary-light-blue);
+    border-width: 0 1px 1px 0;
+    padding: 4px;
+  }
+}
+
+.animation {
+  cursor: pointer;
+  transition: 0.1s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.1);
+
+    .arrowForward {
+      &::after {
+        padding: 3.5px;
+      }
+    }
+
+    & > span {
+      font-size: 18.5px;
+    }
+  }
+}
+
+a {
+  text-decoration: none; /* Убирает подчеркивание */
+  color: inherit; /* Устанавливает цвет текста, как у родительского элемента */
+  background: none; /* Убирает любой фон */
+  border: none; /* Убирает рамку */
+}
+

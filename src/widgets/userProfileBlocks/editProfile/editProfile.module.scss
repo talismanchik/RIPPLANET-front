@@ -1,0 +1,111 @@
+.avatarWrapper {
+  height: 100px;
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 8px;
+
+  .avatar {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border: 1px solid var(--color-secondary-gray);
+    border-radius: 100000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.1s;
+
+    > svg {
+      color: var(--color-accent);
+    }
+
+    .footerAvatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      height: 20px;
+      width: 100%;
+      background-color: var(--color-secondary-gray);
+
+      >svg{
+        color: var(--color-bg);
+      }
+    }
+    &:active{
+      width: 95px;
+      height: 95px;
+    }
+  }
+
+}
+
+.block {
+  width: 458px;
+  margin-bottom: 32px;
+  cursor: context-menu;
+
+  .blockWrapper {
+    margin-top: 8px;
+    border: 1px solid var(--color-secondary-light-blue);
+    border-radius: var(--border-radius-m);
+
+    .blockItem:not(:first-child) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 1px;
+        width: calc(100% - 30px);
+        background-color: var(--color-secondary-light-gray);
+      }
+    }
+  }
+}
+
+.blockItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  min-height: 53px;
+
+  span > input {
+    letter-spacing: 6px;
+  }
+}
+
+.titleItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 7px;
+
+  .titleItemLabel {
+    color: var(--color-secondary-light-blue);
+  }
+}
+
+.deleteAccount {
+  margin-top: 52px;
+  color: var(--color-system-err);
+  width: 100%;
+
+  span:hover{
+    transition: 0.1s;
+    font-size: 13.5px;
+  }
+  span:active{
+    transition: 0.1s;
+    font-size: 12.5px;
+  }
+}

@@ -37,7 +37,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         }
 
         return (
-            <div>
+            <>
                 {label && <Typography variant={'body2'} className={s.label}>{label}</Typography>}
                 < div className={`${s.root} ${className}`}>
                     <input
@@ -79,7 +79,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         {error}
                     </span>
                 )}*/}
-            </div>
+            </>
         )
     }
 )

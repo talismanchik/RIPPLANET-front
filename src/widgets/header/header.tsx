@@ -2,6 +2,7 @@ import s from './header.module.scss'
 import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {ChangeEvent, useState} from "react";
 import {Filter} from "../filter/filter.tsx";
+import {NavLink} from "react-router-dom";
 
 export const Header = () => {
     const [value, setValue] = useState('')
@@ -32,7 +33,7 @@ export const Header = () => {
             </div>
             <div className={s.userMenu}>
                 <div className={s.language}><span>RU</span></div>
-                <div className={s.avatar}><Icon iconId={'avatar'} width={'20'} height={'24'} viewBox={'0 0 16 19'}/></div>
+                <div className={s.avatar}><NavLink to={'/userProfile'}><Icon iconId={'avatar'} width={'20'} height={'24'} viewBox={'0 0 16 19'}/></NavLink></div>
             </div>
             {isOpen &&
                 <Filter setIsOpen={setIsOpenHandler} isOpen={isOpen}/>

@@ -22,6 +22,18 @@ type Props = {
         | 'messenger'
         | 'arrow_down'
         | 'correcter'
+        | 'arrow_forward'
+        | 'payment'
+        | 'history'
+        | 'notification'
+        | 'language'
+        | 'info'
+        | 'blackList'
+        | 'logout'
+        | 'photo'
+        | 'map'
+        | 'card'
+
     viewBox?: string
     width?: string
 }
