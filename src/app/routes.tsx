@@ -61,6 +61,10 @@ export const router = createBrowserRouter([
                 element: <UserProfile/>,
                 children:[
                     {
+                        path: '',
+                        element: <Navigate to="edit-profile" />,
+                    },
+                    {
                         path: 'edit-profile',
                         element: <EditProfile/>
                     },
