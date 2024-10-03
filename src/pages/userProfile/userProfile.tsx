@@ -53,7 +53,9 @@ export const UserProfile = () => {
                                 <div className={s.arrowForward}></div>
                             </li>
                         </NavLink>
-                        <a className={`${s.link} ${s.animation}`}>
+                        <NavLink
+                            className={`${s.link} ${s.animation} ${location.pathname === '/userProfile/order-history' ? s.active : ''}`}
+                            to={'order-history'}>
                             <li className={`${s.blockItem}`}>
                                 <Typography className={s.blockTitle} as='span'>
                                     <Icon iconId={'history'} className={s.fill}/>
@@ -61,13 +63,15 @@ export const UserProfile = () => {
                                 </Typography>
                                 <div className={s.arrowForward}></div>
                             </li>
-                        </a>
+                        </NavLink>
                     </ul>
                 </div>
                 <div className={s.block}>
                     <Typography as='span' variant={'headline'}>Настройки</Typography>
                     <ul className={s.blockWrapper}>
-                        <a className={`${s.link} ${s.animation}`}>
+                        <NavLink
+                            className={`${s.link} ${s.animation} ${location.pathname === '/userProfile/notification' ? s.active : ''}`}
+                            to={'notification'}>
                             <li className={`${s.blockItem}`}>
                                 <Typography className={s.blockTitle} as='span'>
                                     <Icon iconId={'notification'}/>
@@ -75,8 +79,10 @@ export const UserProfile = () => {
                                 </Typography>
                                 <div className={s.arrowForward}></div>
                             </li>
-                        </a>
-                        <a className={`${s.link} ${s.animation}`}>
+                        </NavLink>
+                        <NavLink
+                            className={`${s.link} ${s.animation} ${location.pathname === '/userProfile/language' ? s.active : ''}`}
+                            to={'language'}>
                             <li className={`${s.blockItem} `}>
                                 <Typography className={s.blockTitle} as='span'>
                                     <Icon iconId={'language'}/>
@@ -86,8 +92,10 @@ export const UserProfile = () => {
                                     <div className={s.arrowForward}></div>
                                 </div>
                             </li>
-                        </a>
-                        <a className={`${s.link} ${s.animation}`}>
+                        </NavLink>
+                        <NavLink
+                            className={`${s.link} ${s.animation} ${location.pathname === '/userProfile/info' ? s.active : ''}`}
+                            to={'info'}>
                             <li className={`${s.blockItem}`}>
                                 <Typography className={s.blockTitle} as='span'>
                                     <Icon iconId={'info'}/>
@@ -95,8 +103,10 @@ export const UserProfile = () => {
                                 </Typography>
                                 <div className={s.arrowForward}></div>
                             </li>
-                        </a>
-                        <a className={`${s.link} ${s.animation}`}>
+                        </NavLink>
+                        <NavLink
+                            className={`${s.link} ${s.animation} ${location.pathname === '/userProfile/black-list' ? s.active : ''}`}
+                            to={'black-list'}>
                             <li className={`${s.blockItem}`}>
                                 <Typography className={s.blockTitle} as='span'>
                                     <Icon iconId={'blackList'}/>
@@ -104,7 +114,7 @@ export const UserProfile = () => {
                                 </Typography>
                                 <div className={s.arrowForward}></div>
                             </li>
-                        </a>
+                        </NavLink>
                     </ul>
                 </div>
                 <div className={`${s.logout} ${s.animation}`}>

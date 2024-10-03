@@ -1,0 +1,27 @@
+.orderHistoryContainer {
+  width: 458px;
+
+  .switch {
+    margin-block: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+
+    .link{
+      width: 95px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: var(--border-radius-m);
+      border: 1px solid var(--color-secondary-light-blue);
+
+    }
+    .active{
+      background-color: var(--color-secondary-light-blue);
+      color: var(--color-bg);
+    }
+  }
+}

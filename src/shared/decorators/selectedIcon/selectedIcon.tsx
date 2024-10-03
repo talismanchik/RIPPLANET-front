@@ -6,7 +6,6 @@ type SelectedIconType = {
 export const SelectedIcon = ({className}:SelectedIconType) => {
     return (
         <div className={`${s.selectedIcon} ${className}`}>
-            <div className={s.check}></div>
         </div>
     );
 };

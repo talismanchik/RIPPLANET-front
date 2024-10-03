@@ -10,6 +10,14 @@ import {UserProfile} from "../pages/userProfile/userProfile.tsx";
 import {EditProfile} from "../widgets/userProfileBlocks/editProfile/editProfile.tsx";
 import {CreatedProfiles} from "../widgets/userProfileBlocks/createdProfiles/createdProfiles.tsx";
 import {Payment} from "../widgets/userProfileBlocks/payment/payment.tsx";
+import {OrderHistory} from "../widgets/userProfileBlocks/orderHistory/orderHistory.tsx";
+import {CandlesHistory} from "../widgets/userProfileBlocks/orderHistory/switch/candlesHistory/candlesHistory.tsx";
+import {FeelingsHistory} from "../widgets/userProfileBlocks/orderHistory/switch/feelingsHistory/feelingsHistory.tsx";
+import {QrCodeHistory} from "../widgets/userProfileBlocks/orderHistory/switch/qrCodeHistory/qrCodeHistory.tsx";
+import {Notification} from "../widgets/userProfileBlocks/notification/notification.tsx";
+import {Info} from "../widgets/userProfileBlocks/info/info.tsx";
+import {Language} from "../widgets/userProfileBlocks/language/language.tsx";
+import {BlackList} from "../widgets/userProfileBlocks/blackList/blackList.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +71,44 @@ export const router = createBrowserRouter([
                     {
                         path: 'payment',
                         element: <Payment/>
+                    },
+                    {
+                        path: 'order-history',
+                        element: <OrderHistory/>,
+                        children: [
+                            {
+                                path: '',
+                                element: <Navigate to="candles" />,
+                            },
+                            {
+                                path: 'candles',
+                                element: <CandlesHistory/>
+                            },
+                            {
+                                path: 'feelings',
+                                element: <FeelingsHistory/>
+                            },
+                            {
+                                path: 'qr-code',
+                                element: <QrCodeHistory/>
+                            },
+                        ]
+                    },
+                    {
+                        path: 'notification',
+                        element: <Notification/>
+                    },
+                    {
+                        path: 'info',
+                        element: <Info/>
+                    },
+                    {
+                        path: 'language',
+                        element: <Language/>
+                    },
+                    {
+                        path: 'black-list',
+                        element: <BlackList/>
                     },
                 ]
             },
