@@ -1,0 +1,29 @@
+.checkboxContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+
+  .checkboxWrapper {
+    width: 21px;
+    height: 21px ;
+
+    .checkedFalse{
+      fill: var(--color-bg);
+    }
+  }
+
+  .title {
+    color: var(--color-text-light-blue);
+  }
+
+  &:active{
+    .checkboxWrapper{
+      transition: 0.1s;
+      svg{
+        scale: 0.95;
+      }
+    }
+  }
+}

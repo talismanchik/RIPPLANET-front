@@ -74,7 +74,8 @@ export const Filter = ({setIsOpen}: FilterType) => {
                                           value={monthOfBirthday}
                                           onChange={monthOfBirthdayHandler}/>
                             <SelectSimple options={yearOfBirthdaySelect} placeholder={'Год'} value={yearOfBirthday}
-                                          onChange={yearOfBirthdayHandler}/></div>
+                                          onChange={yearOfBirthdayHandler}/>
+                        </div>
                     </div>
                     <div className={`${s.filterBlock}`}>
                         <Typography variant={'body1'}>Дата смерти</Typography>

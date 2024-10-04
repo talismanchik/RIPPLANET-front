@@ -28,8 +28,8 @@ type Props<T extends ElementType> = {
         | 'tab'
 } & ComponentPropsWithoutRef<T>
 
-export const Typography = <T extends ElementType = 'p'>(props: Props<T>) => {
-    const { as: Component = 'p', className, variant = 'body1', ...rest } = props
+export const Typography = <T extends ElementType = 'span'>(props: Props<T>) => {
+    const { as: Component = 'span', className, variant = 'body1', ...rest } = props
 
     return <Component className={`${s[variant]} ${className}`} {...rest} />
 }

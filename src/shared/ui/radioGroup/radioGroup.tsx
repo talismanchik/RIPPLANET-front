@@ -6,10 +6,11 @@ type RadioGroupType={
     options: OptionsType[]
     value: string
     onchangeValue: (value: string)=>void
+    className?: string
 }
-export const RadioGroup = ({options, onchangeValue, value}:RadioGroupType) => {
+export const RadioGroup = ({className, options, onchangeValue, value}:RadioGroupType) => {
     return (
-        <div className={s.radioGroupContainer}>
+        <div className={`${s.radioGroupContainer} ${className}`}>
             {options.map(item=>{
                 return <label className={s.label}>
                     <input type={'radio'} value={item.value} checked={item.value===value} onChange={()=>onchangeValue(item.value)}/>

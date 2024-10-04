@@ -22,7 +22,7 @@ export const Footer = () => {
                         <Icon iconId={"candle"} width={'22'} height={'22'} viewBox={'0 0 28 28'}/>
                     </li>
                 </Link>
-                <Link to={'/new-deceased-person'}>
+                <Link to={'/create-profile'}>
                     <li>
                         <NewPersonButton/>
                     </li>

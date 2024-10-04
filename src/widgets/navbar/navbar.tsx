@@ -30,7 +30,7 @@ export const Navbar = () => {
                         className={`${s.iconWrapper} ${s.contactUsWrapper} ${popupIsOpen ? s.popupActive : ''}`}>
                         <Icon iconId={'contactUs'} viewBox={'0 0 40 40'} height={'36'} width={'36'}/>
                     </li>
-                    <NavLink to={'new-deceased-person'}>
+                    <NavLink to={'create-profile'}>
                         <NewPersonButton as='li'/>
                     </NavLink>
                 </ul>
@@ -43,7 +43,6 @@ export const Navbar = () => {
     );
 };
 
-//new-deceased-person
 
 //ICONS DATA
 const iconsForNavBar: IconsForNavBarType[] = [

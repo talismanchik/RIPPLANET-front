@@ -1,0 +1,27 @@
+.block{
+
+  .blockWrapper {
+    margin-block: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+
+    .centerSelect {
+      width: 100%;
+    }
+
+
+  }
+
+  .reason{
+    margin-top: 16px;
+  }
+}
+.indent{
+  margin-block: 32px;
+}
+.button{
+  margin-top: 44px;
+}
