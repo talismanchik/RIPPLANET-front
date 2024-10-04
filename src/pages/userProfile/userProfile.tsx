@@ -2,6 +2,7 @@ import s from './userProfile.module.scss'
 import {Typography} from "../../shared/ui/typography/typography.tsx";
 import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {NavLink, Outlet, useLocation} from "react-router-dom";
+import {ArrowForward} from "../../shared/decorators/arrowForward/arrowForward.tsx";
 
 export const UserProfile = () => {
     const location = useLocation();
@@ -28,7 +29,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'correcter'} width={'35'} height={'35'} viewBox={'5 5 45 45'}/>
                                     Редактировать профиль
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                         <NavLink
@@ -39,7 +40,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'avatar'} viewBox={'-8 -8 35 35'}/>
                                     Созданные рпофили
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                         <NavLink
@@ -50,7 +51,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'payment'} className={s.fill}/>
                                     Оплата
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                         <NavLink
@@ -61,7 +62,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'history'} className={s.fill}/>
                                     История Заказов
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                     </ul>
@@ -77,7 +78,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'notification'}/>
                                     Уведомления
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                         <NavLink
@@ -89,7 +90,7 @@ export const UserProfile = () => {
                                     Язык
                                 </Typography>
                                 <div>
-                                    <div className={s.arrowForward}></div>
+                                    <ArrowForward/>
                                 </div>
                             </li>
                         </NavLink>
@@ -101,7 +102,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'info'}/>
                                     Инфо
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                         <NavLink
@@ -112,7 +113,7 @@ export const UserProfile = () => {
                                     <Icon iconId={'blackList'}/>
                                     Чёрный список
                                 </Typography>
-                                <div className={s.arrowForward}></div>
+                                <ArrowForward/>
                             </li>
                         </NavLink>
                     </ul>
@@ -122,7 +123,7 @@ export const UserProfile = () => {
                         <Icon iconId={'logout'} viewBox={'-2 -2 32 32'}/>
                         Выйти
                     </Typography>
-                    <div className={s.arrowForward}></div>
+                    <ArrowForward/>
                 </div>
             </div>
             <div className={`${s.blockContainer} ${s.rightBlockContainer}`}>

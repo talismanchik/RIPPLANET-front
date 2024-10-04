@@ -2,6 +2,7 @@ import s from './editProfile.module.scss'
 import userProfileStyle from '../../../pages/userProfile/userProfile.module.scss'
 import {Icon} from "../../../shared/ui/icon/icon.tsx";
 import {Typography} from "../../../shared/ui/typography/typography.tsx";
+import {ArrowForward} from "../../../shared/decorators/arrowForward/arrowForward.tsx";
 
 export const EditProfile = () => {
     return (
@@ -21,7 +22,7 @@ export const EditProfile = () => {
                     <Typography className={userProfileStyle.blockTitle} as='span'>
                         Нестеренко Евгений
                     </Typography>
-                    <div className={userProfileStyle.arrowForward}></div>
+                    <ArrowForward/>
                 </div>
             </div>
             <div className={s.block}>
@@ -41,7 +42,7 @@ export const EditProfile = () => {
                                 talismanchik.by@gmail.com
                             </Typography>
                         </div>
-                        <div className={userProfileStyle.arrowForward}></div>
+                        <ArrowForward/>
                     </li>
                     <li className={`${s.blockItem} ${userProfileStyle.animation}`}>
                         <div className={`${s.titleItemWrapper}`}>
@@ -55,7 +56,7 @@ export const EditProfile = () => {
                                 +375 29 5244116
                             </Typography>
                         </div>
-                        <div className={userProfileStyle.arrowForward}></div>
+                        <ArrowForward/>
                     </li>
                 </ul>
             </div>
@@ -67,7 +68,7 @@ export const EditProfile = () => {
                     <Typography className={userProfileStyle.blockTitle} as='span'>
                         Нестеренко Евгений
                     </Typography>
-                    <div className={userProfileStyle.arrowForward}></div>
+                    <ArrowForward/>
                 </div>
             </div>
             <div className={s.block}>
@@ -76,7 +77,7 @@ export const EditProfile = () => {
                     <Typography className={userProfileStyle.blockTitle} as='span'>
                         ● ● ● ● ● ● ● ●
                     </Typography>
-                    <div className={userProfileStyle.arrowForward}></div>
+                    <ArrowForward/>
                 </div>
             </div>
             <button className={s.deleteAccount}>

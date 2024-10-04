@@ -1,0 +1,16 @@
+
+  .arrowForward {
+    position: relative;
+    padding-right: 12px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      border: solid var(--color-secondary-light-blue);
+      border-width: 0 1px 1px 0;
+      padding: 4px;
+    }
+  }
