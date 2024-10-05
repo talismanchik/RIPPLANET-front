@@ -35,6 +35,7 @@ type Props = {
         | 'card'
         | 'checkboxTrue'
         | 'checkboxFalse'
+        | 'image'
 
     viewBox?: string
     width?: string

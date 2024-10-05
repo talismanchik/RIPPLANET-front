@@ -1,7 +1,10 @@
 import s from './arrowForward.module.scss'
-export const ArrowForward = () => {
+type Props = {
+    className?: string
+}
+export const ArrowForward = ({className}: Props) => {
     return (
-        <div className={s.arrowForward}></div>
+        <div className={`${s.arrowForward} ${className}`}></div>
 
     );
 };

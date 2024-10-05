@@ -1,9 +1,13 @@
 .createProfileContainer {
-  padding: var(--padding);
+
   display: grid;
   grid-template-columns: 400px 1fr;
+  height: 100%;
+  
 
   .leftBlock {
+    padding-left: var(--padding);
+    padding-block: var(--padding);
 
 
     .linkToBack {
@@ -39,9 +43,12 @@
   }
 
   .rightBlock{
+    padding-block: var(--padding);
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    height: 100%;
+    overflow-y: auto;
 
     .form{
       padding-top: 84px;

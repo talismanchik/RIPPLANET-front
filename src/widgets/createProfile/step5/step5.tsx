@@ -1,18 +1,58 @@
 import s from './step5.module.scss'
 import {Button} from "../../../shared/ui/button/button.tsx";
 import {Typography} from "../../../shared/ui/typography/typography.tsx";
+import {Input} from "../../../shared/ui/input/input.tsx";
+import {Checkbox} from "../../../shared/ui/checkbox/checkbox.tsx";
+import {useState} from "react";
+import {Icon} from "../../../shared/ui/icon/icon.tsx";
+import {MapContainer} from "../../../features/map/map.tsx";
 
 type Props = {
-    onChangeStage: (nextStage: number)=>void
+    onChangeStage: (nextStage: number) => void
 }
 
-export const Step5 = ({onChangeStage}:Props) => {
+export const Step5 = ({onChangeStage}: Props) => {
+    const [isLocationKnown, setIsLocationKnown] = useState<boolean>(false)
+    const setIsLocationKnownHandler = () => {
+        setIsLocationKnown(!isLocationKnown)
+    }
+
     return (
-        <div className={s.s}>
-            Step5
-            <Button onClick={()=>onChangeStage(6)} type={'button'}>
-                <Typography variant={'head1'}>Далее</Typography>
-            </Button>
-        </div>
+        <>
+            <Typography variant={'head1'}>
+                Место захоронения
+            </Typography>
+            <div className={s.locationInputs}>
+                <Input variant={'searchDecoration'} placeholder={'Страна'}/>
+                <Input variant={'searchDecoration'} placeholder={'Область'}/>
+                <Input variant={'searchDecoration'} placeholder={'Город'}/>
+            </div>
+            <Input variant={'searchDecoration'} placeholder={'Координаты'}/>
+
+            <div className={s.mapContainer}>
+                <MapContainer/>
+            </div>
+            <div className={s.mapMediaContainer}>
+                <Icon iconId={'image'}
+                      height={'70'}
+                      width={'70'}
+                      viewBox={'0 0 70 70'}
+                      className={s.image}
+                />
+                <Typography
+                    className={s.textImage}
+                    variant={'footnote'}>
+                    Перетяните фото места захоронения или видео для загрузки
+                </Typography>
+            </div>
+            <div className={s.checkBox}>
+                <Checkbox title={'Неизвестно'} checked={isLocationKnown} onChecked={setIsLocationKnownHandler}/>
+            </div>
+                <Button className={s.buttonNext} onClick={() => onChangeStage(6)}
+                        type={'button'}>
+                    <Typography variant={'head1'}>Далее</Typography>
+                </Button>
+
+        </>
     );
 };

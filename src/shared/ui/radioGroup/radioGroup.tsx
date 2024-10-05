@@ -12,7 +12,7 @@ export const RadioGroup = ({className, options, onchangeValue, value}:RadioGroup
     return (
         <div className={`${s.radioGroupContainer} ${className}`}>
             {options.map(item=>{
-                return <label className={s.label}>
+                return <label key={item.value} className={s.label}>
                     <input type={'radio'} value={item.value} checked={item.value===value} onChange={()=>onchangeValue(item.value)}/>
                     <Typography variant={'body2'}>{item.title}</Typography>
                 </label>

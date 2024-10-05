@@ -1,0 +1,92 @@
+.religionListWrapper {
+  max-height: 450px;
+  width: 100%;
+  border-radius: var(--border-radius-m);
+  border: 1px solid var(--color-secondary-light-blue);
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-block: 16px;
+
+  .religionList {
+    max-height: 450px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+
+    .religion {
+      cursor: pointer;
+      width: 100%;
+      min-height: 47px;
+      max-height: 47px;
+      padding-inline: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .ok {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 5px;
+          top: -5px;
+          border: solid var(--color-accent);
+          border-width: 0 0 2px 2px;
+          width: 12px;
+          height: 7px;
+          transform: rotate(-45deg);
+
+        }
+      }
+    }
+
+    .active:not(:last-child){
+      border-bottom: 1px solid var(--color-secondary-light-blue);
+    }
+    .active:not(:first-child){
+      border-top: 1px solid var(--color-secondary-light-blue);
+    }
+    .religion:not(.active):not(:first-child),
+    .religion.active + .link:not(.active) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 1px;
+        width: calc(100% - 30px);
+        background-color: var(--color-secondary-light-gray);
+      }
+    }
+    .religion.active + .religion:not(.active){
+      &::after{
+        background: none;
+        height: 0;
+      }
+    }
+  }
+}
+.skipButton{
+  width: 100%;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: var(--color-text-gray);
+
+  span{
+    transition: 0.2s;
+  }
+  &:hover>span{
+    font-size: 17.5px;
+  }
+  &:active>span{
+    font-size: 16.5px;
+  }
+}
