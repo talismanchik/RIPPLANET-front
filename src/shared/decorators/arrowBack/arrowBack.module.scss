@@ -1,0 +1,27 @@
+.linkToBack {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  height: 44px;
+  color: var(--color-text-light-blue);
+
+cursor: pointer;
+  .arrowBack {
+    position: relative;
+    padding-right: 8px;
+
+
+    &::after {
+
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      border: solid var(--color-secondary-light-blue);
+      border-width: 1px 0 0 1px;
+      padding: 3px;
+    }
+  }
+}

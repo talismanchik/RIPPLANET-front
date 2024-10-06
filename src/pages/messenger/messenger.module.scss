@@ -1,0 +1,35 @@
+.messengerContainer{
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  height: 100%;
+  width: 100%;
+  .contactsContainer{
+    height: 100%;
+    overflow-y: hidden;
+    padding-top: 24px;
+
+    .arrowBack{
+      margin-bottom: 24px;
+      padding-inline: 24px;
+    }
+
+    .header{
+      padding-inline: 10px;
+      cursor: default;
+      .search{
+        margin-block: 40px 16px;
+      }
+
+      .title{
+        color: var(--color-accent);
+      }
+    }
+
+  }
+  .contentContainer{
+
+    border-left: 1px solid var(--color-secondary-gray);
+    display: grid;
+    grid-template-rows: 80px 1fr;
+  }
+}

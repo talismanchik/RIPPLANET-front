@@ -36,6 +36,9 @@ type Props = {
         | 'checkboxTrue'
         | 'checkboxFalse'
         | 'image'
+        | 'more'
+        | 'camera'
+        | 'phone'
 
     viewBox?: string
     width?: string
