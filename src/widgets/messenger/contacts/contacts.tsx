@@ -2,6 +2,7 @@ import s from './contacts.module.scss'
 import {ContactType} from "../../../pages/messenger/messengerData.tsx";
 import {Icon} from "../../../shared/ui/icon/icon.tsx";
 import {Typography} from "../../../shared/ui/typography/typography.tsx";
+import {MessageStatus} from "../../../shared/ui/messageStatus/messageStatus.tsx";
 
 type Props = {
     contacts: ContactType[]
@@ -31,11 +32,7 @@ export const Contacts = ({contacts, onActive, id}: Props) => {
                             </div>
                             <div className={s.contactInfoBlock}>
                                 <div className={s.topBlock}>
-                                    {contact.lastMessageStatus &&
-                                        <div
-                                            className={`${s.messageSend} ${contact.lastMessageStatus === 'read' 
-                                                ? s.messageRead 
-                                                : ''}`}></div>}
+                                    {contact.lastMessageStatus && <MessageStatus status={contact.lastMessageStatus}/>}
                                     <Typography className={s.lastVisitTime}
                                                 variant={'footnote'}>
                                         {contact.lastVisit}

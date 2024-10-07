@@ -6,11 +6,12 @@ type Props = {
     avatar?: string
     title: string
     userStatus: string
+    onClickContact: ()=>void
 }
-export const MessageLayoutHeader = ({avatar, title, userStatus}: Props) => {
+export const MessageLayoutHeader = ({onClickContact, avatar, title, userStatus}: Props) => {
     return (
         <div className={s.header}>
-            <div className={s.leftBlock}>
+            <div onClick={onClickContact} className={s.leftBlock}>
                 <div className={s.imageWrapper}>
                     {avatar
                         ? <img alt={'avatar'} src={avatar}/>

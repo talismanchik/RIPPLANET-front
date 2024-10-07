@@ -2,6 +2,7 @@
   display: inline-block;
   position: relative;
   width: 51px;
+  min-width: 51px;
   height: 31px;
 
   & > input {

@@ -1,0 +1,100 @@
+.messageListContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px;
+
+  .messageDateGroup {
+    width: 100%;
+
+    .dateMessage {
+      width: 100%;
+      text-align: center;
+      color: var(--color-text-light-blue);
+    }
+
+    .message {
+      font-family: Montserrat, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+      gap: 8px;
+
+      .avatarWrapper {
+        height: 37px;
+        width: 37px;
+        min-width: 37px;
+
+        > img {
+          object-fit: cover;
+        }
+      }
+
+      .messageContentWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+
+        .messageContent {
+          border: 1px solid var(--color-secondary-light-blue);
+          border-radius: 10px;
+          padding: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+        }
+
+        .settings {
+          display: none;
+          align-items: center;
+
+          .iconWrapper {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 37px;
+            width: 37px;
+            min-width: 37px;
+
+            > svg {
+              color: var(--color-secondary-light-blue);
+            }
+          }
+        }
+
+        &:hover {
+          .settings {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    .myMessage {
+      flex-direction: row-reverse;
+      margin-bottom: 6px;
+
+      .messageContentWrapper {
+        flex-direction: row-reverse;
+
+        .messageContent {
+          background-color: var(--color-accent);
+          color: var(--color-bg);
+          border: none;
+        }
+
+        .settings {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+
+  }
+
+}

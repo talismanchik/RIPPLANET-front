@@ -39,6 +39,12 @@ type Props = {
         | 'more'
         | 'camera'
         | 'phone'
+        | 'clip'
+        | 'microphone'
+        | 'sendMessage'
+        | 'answer'
+        | 'complain'
+        | 'delete'
 
     viewBox?: string
     width?: string

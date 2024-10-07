@@ -1,0 +1,89 @@
+.block {
+  border: 1px solid var(--color-secondary-light-blue);
+  border-radius: var(--border-radius-m);
+  margin-bottom: 8px;
+  width: 100%;
+
+  .separator {
+    margin-inline: 13px;
+    border-bottom: 1px solid var(--color-secondary-light-gray);
+  }
+
+}
+
+
+.blockItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 13px;
+  height: 53px;
+  cursor: pointer;
+  gap: 17px;
+
+  .title {
+    width: 100%;
+  }
+
+  .iconWrapper {
+
+    height: 28px;
+    width: 28px;
+    min-width: 28px;
+
+    > svg {
+      color: var(--color-secondary-light-blue);
+    }
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.children {
+
+  .topBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+
+    .avatarWrapper {
+      height: 100px;
+      width: 100px;
+      margin-bottom: 16px;
+
+      > img {
+        object-fit: cover;
+      }
+    }
+
+    .nickName {
+      color: var(--color-text-gray);
+    }
+  }
+
+  .closeButton {
+    height: 46px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .titleButton {
+      color: var(--color-secondary-light-blue);
+    }
+  }
+}
+.redColor{
+  .iconWrapper>svg,
+  .title{
+    color: var(--color-system-err);
+  }
+}

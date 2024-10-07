@@ -1,0 +1,31 @@
+.messageSend {
+  position: relative;
+  height: 13px;
+  width: 15px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    transform: rotate(-45deg);
+    padding: 2px 4px;
+    border: solid var(--color-accent);;
+    border-width: 0 0 2px 2px;
+  }
+}
+
+.messageRead {
+  width: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 27%;
+    left: 52%;
+    transform: rotate(-45deg);
+    padding: 1px 4px;
+    border: solid var(--color-accent);;
+    border-width: 0 0 2px 2px;
+  }
+}
