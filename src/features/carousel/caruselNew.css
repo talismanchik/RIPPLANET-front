@@ -1,0 +1,31 @@
+.carousel-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+.custom-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  color: #fff; /* Цвет стрелок */
+}
+
+.left-arrow {
+  margin-left: 10px;
+}
+
+.right-arrow {
+  margin-right: 10px;
+}

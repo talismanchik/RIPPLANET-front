@@ -15,10 +15,10 @@ export const Contacts = ({contacts, onActive, id}: Props) => {
             {contacts.map(contact => {
                 return (
                     <div onClick={()=>onActive(contact.id)} className={`${s.contact} ${id === contact.id? s.active : ''}`} key={contact.id}>
-                        <div className={s.avatarWrapper}>
+                        <div className={`${s.avatarWrapper} ${contact.avatar? '' : s.iconWrapper}`}>
                             {contact.avatar
                                 ? <img alt={'avatar'} src={contact.avatar}/>
-                                : <Icon iconId={'avatar'} viewBox={'-1.5 0 19 19'} height={'56'} width={'56'}/>
+                                : <Icon iconId={'avatar'} viewBox={'-1.5 0 19 19'} height={'35'} width={'35'}/>
                             }
                         </div>
                         <div className={s.contactInfo}>

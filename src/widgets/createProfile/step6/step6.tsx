@@ -6,6 +6,7 @@ import {useState} from "react";
 import {Icon} from "../../../shared/ui/icon/icon.tsx";
 import {Carousel} from "../../../features/carousel/carousel.tsx";
 
+
 type Props = {
     onChangeStage: (nextStage: number) => void
 }
@@ -24,6 +25,7 @@ export const Step6 = ({onChangeStage}: Props) => {
             <Typography variant={'head1'}>Фото</Typography>
             <div className={s.content}>
                 <Carousel/>
+                {/*<CaruselNew/>*/}
                 <div className={s.profileMediaContainer}>
                     <div className={s.mediaContainerHeader}>
                         <div className={s.buttonAddFile}>

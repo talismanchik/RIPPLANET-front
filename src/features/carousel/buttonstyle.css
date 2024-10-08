@@ -1,0 +1,43 @@
+.arrow {
+    z-index: 2;
+    cursor: pointer;
+    position: relative;
+    padding-right: 12px;
+    transition: 0.1s;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        border: solid var(--color-text-dark);
+
+        padding: 7px;
+    }
+
+
+    &:hover {
+        scale: 1.1;
+    }
+
+    &:active {
+        scale: 0.9;
+    }
+
+}
+
+.leftArrow {
+
+    &::after {
+        border-width: 2px 0 0 2px;
+
+    }
+}
+
+.rightArrow {
+    &::after {
+        border-width: 0 2px 2px 0;
+
+    }
+}

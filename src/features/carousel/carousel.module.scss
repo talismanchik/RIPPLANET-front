@@ -73,6 +73,8 @@
     justify-content: center;
     gap: 21px;
 
+
+
     .svg{
       color: var(--color-bg);
     }
@@ -90,7 +92,7 @@
     width: 20%;
     height: 100%;
     z-index: 0;
-    pointer-events: none; /* Чтобы не мешать взаимодействию с контентом */
+    pointer-events: none;
   }
 
   &::before {
@@ -107,7 +109,7 @@
 
 .carouselTrack {
   position: absolute;
-  left: calc(50% - 100px);
+  left: calc(-50% + 138px);
   top: 0;
   display: flex;
   align-items: center;
@@ -125,4 +127,7 @@
   border: 5px solid;
   box-sizing: border-box;
   border-radius: 35px;
+}
+.imgWrapper{
+  composes: userSelect from '../../app/styles/templates.module.scss';
 }
