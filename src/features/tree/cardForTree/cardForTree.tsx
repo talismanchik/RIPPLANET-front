@@ -45,7 +45,7 @@ export type personInfo = {
     secondSurname?: string
     id: string
     birthday: string
-    death?: string
+    death?: boolean
     female: 'male' | 'female'
     className?: string
 }

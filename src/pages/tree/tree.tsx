@@ -2,7 +2,7 @@ import s from './tree.module.scss'
 import {CardForTree, personInfo} from "../../features/tree/cardForTree/cardForTree.tsx";
 import girl from '../../assets/images/accaunts/girl.png'
 import perry from '../../assets/images/accaunts/perry.jpg'
-import {MouseEventHandler, useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState} from "react";
 import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {ArrowForward} from "../../shared/decorators/arrowForward/arrowForward.tsx";
 
@@ -20,9 +20,13 @@ export const Tree = () => {
         const square = squareRef.current;
 
         if (container && square) {
+            // @ts-ignore
             const containerWidth = container.offsetWidth;
+            // @ts-ignore
             const containerHeight = container.offsetHeight;
+            // @ts-ignore
             const squareWidth = square.offsetWidth;
+            // @ts-ignore
             const squareHeight = square.offsetHeight;
 
             setPosition({
@@ -32,7 +36,7 @@ export const Tree = () => {
         }
     }, []);
 
-    const handleMouseDown = (e) => {
+    const handleMouseDown = (e: any) => {
         setIsDragging(true);
         setOffset({
             x: e.clientX - position.x,
@@ -40,7 +44,7 @@ export const Tree = () => {
         });
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: any) => {
         if (isDragging) {
             setPosition({
                 x: e.clientX - offset.x,
