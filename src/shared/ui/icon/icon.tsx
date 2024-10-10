@@ -45,6 +45,16 @@ type Props = {
         | 'answer'
         | 'complain'
         | 'delete'
+        | 'tree'
+        | 'settings'
+        | 'portrait'
+        | 'share_arrow'
+        | 'public_relation'
+        | 'list'
+        | 'location'
+        | 'download'
+        | 'full_screen'
+        | 'expand'
 
     viewBox?: string
     width?: string

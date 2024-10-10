@@ -1,0 +1,289 @@
+.treeContainer {
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  .treeWrapper {
+    padding: 500px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    min-width: 100%;
+    gap: 150px;
+
+
+    .rowContainer {
+      display: flex;
+      gap: 100px;
+    }
+  }
+
+  .sideBlock {
+
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .block {
+      flex-direction: column;
+    }
+
+    .separator {
+      height: 1px;
+      width: 60%;
+      background-color: var(--color-secondary-light-gray);
+    }
+  }
+
+  .topBlock {
+
+    top: 20px;
+    left: 50px;
+
+    .separator {
+      height: 60%;
+      width: 1px;
+      background-color: var(--color-secondary-light-gray);
+    }
+  }
+
+  .settings {
+    position: absolute;
+    background-color: var(--color-bg);
+    z-index: 1;
+    display: flex;
+
+
+    .block {
+      display: flex;
+
+
+      align-items: center;
+      position: relative;
+      border-radius: var(--border-radius-m);
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+
+      .blockItem {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          color: var(--color-text-light-blue);
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
+
+          svg {
+            scale: 0.95;
+          }
+        }
+      }
+
+      .plus,
+      .minus {
+
+        padding: 8px;
+
+
+        &::before {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%);
+          width: 17px;
+          height: 2px;
+          background-color: var(--color-text-light-blue);
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &:active {
+          background-color: rgba(0, 0, 0, 0.1);
+
+
+          &::after, &::before {
+            width: 15px;
+          }
+
+        }
+      }
+
+      .plus {
+        &::after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%) rotate(90deg);
+          width: 17px;
+          height: 2px;
+          background-color: var(--color-text-light-blue);
+        }
+      }
+    }
+
+
+  }
+
+  .screenWrapper {
+    top: 20px;
+    right: 20px;
+  }
+
+  .movement {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.myProfile {
+  position: relative;
+  border: 2px solid var(--color-secondary-male);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: green;
+
+  }
+
+  &::after {
+    top: -275px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 275px;
+  }
+
+  &::before {
+    top: -275px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+  }
+}
+
+.upLeft {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+
+  }
+
+  &::after {
+    top: -150px;
+    left: -200px;
+    border: solid green;
+    width: 300px;
+    height: 75px;
+    border-width: 0 0 2px 2px;
+  }
+
+  &::before {
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
+    width: 2px;
+    background-color: green;
+  }
+}
+
+.upRight {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+
+  }
+
+  &::after {
+    top: -150px;
+    left: 100px;
+    border: solid green;
+    width: 300px;
+    height: 75px;
+    border-width: 0 2px 2px 0;
+  }
+
+  &::before {
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 150px;
+    width: 2px;
+    background-color: green;
+  }
+}
+
+.son {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: green;
+
+  }
+
+  &::after {
+    top: -150px;
+    left: -50px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 275px;
+  }
+
+  &::before {
+    top: 50%;
+    left: -100px;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 2px;
+  }
+}

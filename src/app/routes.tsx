@@ -18,6 +18,7 @@ import {Notification} from "../widgets/userProfileBlocks/notification/notificati
 import {Info} from "../widgets/userProfileBlocks/info/info.tsx";
 import {Language} from "../widgets/userProfileBlocks/language/language.tsx";
 import {BlackList} from "../widgets/userProfileBlocks/blackList/blackList.tsx";
+import {Tree} from "../pages/tree/tree.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
             {
                 path: "/plaques",
                 element: <Plaques/>,
+            },
+            {
+                path: "/tree",
+                element: <Tree/>,
             },
             {
                 path: "/create-profile",

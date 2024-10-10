@@ -82,6 +82,12 @@ const iconsForNavBar: IconsForNavBarType[] = [
         viewBox: '-1 -1 38 38',
         className: 'plaquesWrapper',
     },
+    {
+        iconId: 'tree',
+        link: 'tree',
+        viewBox: '0 0 35 35',
+        className: 'plaquesWrapper',
+    },
 ]
 export type IconsForNavBarType = {
     iconId:
@@ -100,7 +106,8 @@ export type IconsForNavBarType = {
         | 'eye_outline'
         | 'eye_off_outline'
         | 'messenger'
-        | 'close',
+        | 'close'
+        | 'tree',
     link: string,
     width?: string,
     height?: string,
