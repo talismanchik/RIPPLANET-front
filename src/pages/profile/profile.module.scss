@@ -1,0 +1,14 @@
+.profileContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  position: relative;
+  gap: 24px;
+  overflow: hidden;
+
+  .arrowBack{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}

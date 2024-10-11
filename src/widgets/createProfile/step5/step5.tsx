@@ -4,8 +4,8 @@ import {Typography} from "../../../shared/ui/typography/typography.tsx";
 import {Input} from "../../../shared/ui/input/input.tsx";
 import {Checkbox} from "../../../shared/ui/checkbox/checkbox.tsx";
 import {useState} from "react";
-import {Icon} from "../../../shared/ui/icon/icon.tsx";
 import {MapContainer} from "../../../features/map/map.tsx";
+import {AddPhotoVideo} from "../../../features/addPhotoVideo/addPhotoVideo.tsx";
 
 type Props = {
     onChangeStage: (nextStage: number) => void
@@ -32,26 +32,14 @@ export const Step5 = ({onChangeStage}: Props) => {
             <div className={s.mapContainer}>
                 <MapContainer/>
             </div>
-            <div className={s.mapMediaContainer}>
-                <Icon iconId={'image'}
-                      height={'70'}
-                      width={'70'}
-                      viewBox={'0 0 70 70'}
-                      className={s.image}
-                />
-                <Typography
-                    className={s.textImage}
-                    variant={'footnote'}>
-                    Перетяните фото места захоронения или видео для загрузки
-                </Typography>
-            </div>
+            <AddPhotoVideo className={s.addMediaBlock}/>
             <div className={s.checkBox}>
                 <Checkbox title={'Неизвестно'} checked={isLocationKnown} onChecked={setIsLocationKnownHandler}/>
             </div>
-                <Button className={s.buttonNext} onClick={() => onChangeStage(6)}
-                        type={'button'}>
-                    <Typography variant={'head1'}>Далее</Typography>
-                </Button>
+            <Button className={s.buttonNext} onClick={() => onChangeStage(6)}
+                    type={'button'}>
+                <Typography variant={'head1'}>Далее</Typography>
+            </Button>
 
         </>
     );

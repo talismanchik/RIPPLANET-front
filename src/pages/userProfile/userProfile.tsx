@@ -38,7 +38,7 @@ export const UserProfile = () => {
                             <li className={`${s.blockItem}`}>
                                 <Typography className={s.blockTitle} as='span'>
                                     <Icon iconId={'avatar'} viewBox={'-8 -8 35 35'}/>
-                                    Созданные рпофили
+                                    Созданные профили
                                 </Typography>
                                 <ArrowForward/>
                             </li>

@@ -1,0 +1,25 @@
+.mapMediaContainer {
+  cursor: pointer;
+
+  padding: 15px;
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-image: url("../../assets/images/background/locationPlaceholder.png");
+  background-size: 100% 100%;
+  background-color: #f3f9ff;
+  border-radius: var(--border-radius-m);
+
+  .image {
+    color: var(--color-secondary-gray);
+  }
+
+  .textImage {
+    text-align: center;
+    color: var(--color-secondary-gray);
+  }
+}

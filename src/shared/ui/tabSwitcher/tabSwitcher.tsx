@@ -11,7 +11,7 @@ type Props = {
     value: null | string
 }
 
-export const TabSwitcher = ({ className, items, label, onValueChange, value }: Props) => {
+export const  TabSwitcher = ({ className, items, label, onValueChange, value }: Props) => {
 
     const itemMarkup = items.map((item, key) => {
         return (

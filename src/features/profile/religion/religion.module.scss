@@ -1,0 +1,46 @@
+.religionContainer {
+  padding: 16px;
+  width: 100%;
+
+  .religion {
+
+  }
+
+  .separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-block: 8px;
+  }
+
+  .life {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+
+    .lifeBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;.familyContainer{
+      width: 100%;
+      padding: 24px;
+
+
+      .placeHolder{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--color-text-light-blue);
+      }
+    }
+      gap: 8px;
+
+      .label {
+        color: var(--color-text-gray);
+      }
+    }
+  }
+}

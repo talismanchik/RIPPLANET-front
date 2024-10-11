@@ -1,0 +1,70 @@
+.profileCandlesContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+
+
+  .candlesColumn {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+  }
+}
+
+
+.candleContainer {
+  padding: 15px;
+  background-color: #F3F9FF;
+  border-radius: var(--border-radius-m);
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+
+    .imgWrapper {
+      height: 32px;
+      width: 32px;
+      min-height: 32px;
+      max-height: 32px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .contentHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 8px;
+
+      .time {
+        color: var(--color-text-gray);
+      }
+
+    }
+
+  }
+
+  .candle {
+    margin-inline: auto;
+    border-radius: var(--border-radius-m);
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    min-height: 180px;
+    min-width: 180px;
+    margin-bottom: 8px;
+  }
+
+
+}

@@ -4,6 +4,14 @@ type Props = {
     className?: string
     height?: string
     iconId:
+        | 'instagram'
+        | 'tikTok'
+        | 'facebook'
+        | 'twitter'
+        | 'vk'
+        | 'youTube'
+        | 'classmates'
+        | 'wikipedia'
         | 'filters'
         | 'search'
         | 'avatar'

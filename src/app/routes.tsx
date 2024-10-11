@@ -19,15 +19,18 @@ import {Info} from "../widgets/userProfileBlocks/info/info.tsx";
 import {Language} from "../widgets/userProfileBlocks/language/language.tsx";
 import {BlackList} from "../widgets/userProfileBlocks/blackList/blackList.tsx";
 import {Tree} from "../pages/tree/tree.tsx";
+import {Profile} from "../pages/profile/profile.tsx";
+import {ProfileCandles} from "../features/profile/candles/profileCandles.tsx";
+import {MemoryWall} from "../features/profile/memoryWall/memoryWall.tsx";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
-        children:[
+        children: [
             {
                 path: '',
-                element: <Navigate to="home" />,
+                element: <Navigate to="home"/>,
             },
             {
                 path: "/home",
@@ -58,16 +61,39 @@ export const router = createBrowserRouter([
                 element: <Tree/>,
             },
             {
+                path: "/profile",
+                element: <Profile/>,
+                children: [
+                    {
+                        path: '',
+                        element: <Navigate to="candles"/>,
+                    },
+                    {
+                        path: 'candles',
+                        element: <ProfileCandles/>
+                    },
+                    {
+                        path: 'feelings',
+                        element: <ProfileCandles/>
+                    },
+                    {
+                        path: 'memory',
+                        element: <MemoryWall/>
+                    },
+
+                ]
+            },
+            {
                 path: "/create-profile",
                 element: <CreateProfile/>,
             },
             {
                 path: "/userProfile",
                 element: <UserProfile/>,
-                children:[
+                children: [
                     {
                         path: '',
-                        element: <Navigate to="edit-profile" />,
+                        element: <Navigate to="edit-profile"/>,
                     },
                     {
                         path: 'edit-profile',
@@ -87,7 +113,7 @@ export const router = createBrowserRouter([
                         children: [
                             {
                                 path: '',
-                                element: <Navigate to="candles" />,
+                                element: <Navigate to="candles"/>,
                             },
                             {
                                 path: 'candles',

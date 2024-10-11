@@ -1,0 +1,14 @@
+.hobbiesContainer{
+  width: 100%;
+  padding: 24px;
+
+
+  .placeHolder{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-light-blue);
+  }
+}
