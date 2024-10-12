@@ -2,7 +2,7 @@ import {createBrowserRouter, Navigate} from "react-router-dom";
 import {ProfilesPage} from "../pages/profilesPage/profilesPage.tsx";
 import {ProfilesWithLikePage} from "../pages/profilesWithLikePage/profilesWithLikePage.tsx";
 import App from "./App.tsx";
-import {Candles} from "../pages/candles/candles.tsx";
+import {Candles} from "../pages/candles/ui/candles.tsx";
 import {CreateProfile} from "../pages/createProfile/createProfile.tsx";
 import {Messenger} from "../pages/messenger/messenger.tsx";
 import {Plaques} from "../pages/plaques/plaques.tsx";

@@ -35,34 +35,17 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 
 h3 {
-  font-size: 13px;
+  font-size: 26px;
+  line-height: 32px;
   font-weight: 700;
-  line-height: 16px;
 
-  @media (min-width: 1024px) {
-    font-size: 26px;
-    line-height: 32px;
-  }
+
 }
 
 p {
-  font-size: 13px;
-  line-height: 15px;
-  @media (min-width: 1024px) {
-    font-size: 22px;
-    line-height: 27px;
-  }
+  font-size: 22px;
+  line-height: 27px;
 }
-
-/*span{
-  font-size: 12px;
-  line-height: 15px;
-
-  @media (min-width: 1024px) {
-    font-size: 23px;
-    line-height: 28px;
-  }
-}*/
 
 ul, ul li {
   list-style: none;
@@ -135,10 +118,11 @@ body {
   background: url('../../assets/images/background/background.webp') center no-repeat;
   background-size: cover;
 
-  .container {
-    position: relative;
-    max-width: 1280px;
-    margin: 0 auto;
 
-  }
+}
+.container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+
 }

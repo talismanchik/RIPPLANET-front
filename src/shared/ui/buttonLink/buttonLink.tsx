@@ -5,10 +5,11 @@ type ButtonLinkType = {
     link: string
     title: string
     className?: string
+    onClick?: ()=>void
 }
-export const ButtonLink = ({link, title, className}: ButtonLinkType) => {
+export const ButtonLink = ({link, title, className, onClick}: ButtonLinkType) => {
     return (
-        <Link to={link} className={`${s.link} ${className}`}>
+        <Link onClick={onClick} to={link} className={`${s.link} ${className}`}>
             <div className={`${s.titleWrapper}`}>
                 {title}
             </div>

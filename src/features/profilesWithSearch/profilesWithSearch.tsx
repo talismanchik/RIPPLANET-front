@@ -34,6 +34,7 @@ export const ProfilesWithSearch = ({
                                         isMyCard={profile.isMyCard}
                                         isActive={activeProfile === profile.id}
                                         id={profile.id}
+                                        key={profile.id}
                     />
                 })}
             </div>

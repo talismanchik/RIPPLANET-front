@@ -63,35 +63,35 @@ export const profilesHub: ProfileType[] = [
 
 
 export const candles: MemoryType[] = [
-    {id:'1', picture: candle1 },
-    {id:'2', picture: candle2 },
-    {id:'3', picture: candle3},
-    {id:'4', picture: candle4, coast: '1 €'},
-    {id:'5', picture: candle5, coast: '1 €'},
-    {id:'6', picture: candle6, coast: '1 €'},
-    {id:'7', picture: candle7, coast: '1 €'},
-    {id:'8', picture: candle8, coast: '1 €'},
-    {id:'9', picture: candle9, coast: '1 €'},
-    {id:'10', picture: candle10, coast: '2 €'},
-    {id:'11', picture: candle11, coast: '2 €'},
-    {id:'12', picture: candle12, coast: '2 €'},
-    {id:'13', picture: candle13, coast: '2 €'},
-    {id:'14', picture: candle14, coast: '2 €'},
-    {id:'15', picture: candle15, coast: '2 €'},
-    {id:'16', picture: candle16, coast: '2 €'},
-    {id:'17', picture: candle17, coast: '3 €'},
-    {id:'18', picture: candle18, coast: '3 €'},
-    {id:'19', picture: candle19, coast: '3 €'},
-    {id:'21', picture: candle21, coast: '3 €'},
-    {id:'20', picture: candle20, coast: '5 €'},
+    {id:'1', image: candle1 },
+    {id:'2', image: candle2 },
+    {id:'3', image: candle3},
+    {id:'4', image: candle4, coast: '1 €'},
+    {id:'5', image: candle5, coast: '1 €'},
+    {id:'6', image: candle6, coast: '1 €'},
+    {id:'7', image: candle7, coast: '1 €'},
+    {id:'8', image: candle8, coast: '1 €'},
+    {id:'9', image: candle9, coast: '1 €'},
+    {id:'10', image: candle10, coast: '2 €'},
+    {id:'11', image: candle11, coast: '2 €'},
+    {id:'12', image: candle12, coast: '2 €'},
+    {id:'13', image: candle13, coast: '2 €'},
+    {id:'14', image: candle14, coast: '2 €'},
+    {id:'15', image: candle15, coast: '2 €'},
+    {id:'16', image: candle16, coast: '2 €'},
+    {id:'17', image: candle17, coast: '3 €'},
+    {id:'18', image: candle18, coast: '3 €'},
+    {id:'19', image: candle19, coast: '3 €'},
+    {id:'21', image: candle21, coast: '3 €'},
+    {id:'20', image: candle20, coast: '5 €'},
 ]
 export const feelings: MemoryType[] = [
-    {id:'1', picture: feelings1 },
-    {id:'2', picture: feelings2 },
-    {id:'3', picture: feelings3},
-    {id:'4', picture: feelings4 },
-    {id:'5', picture: feelings5 },
-    {id:'6', picture: feelings6},
+    {id:'1', image: feelings1 },
+    {id:'2', image: feelings2 },
+    {id:'3', image: feelings3},
+    {id:'4', image: feelings4 },
+    {id:'5', image: feelings5 },
+    {id:'6', image: feelings6},
 ]
 
 export type ProfileType = {
@@ -107,7 +107,7 @@ export type ProfileType = {
 }
 
 export type MemoryType = {
-    picture: string
+    image: string
     coast?: string
     id: string
 }

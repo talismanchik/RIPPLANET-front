@@ -7,7 +7,6 @@ import {BurgerButton} from "../../shared/decorators/burgerButton/burgerButton.ts
 
 export const Footer = () => {
     const [isOpen, setIsOpen] = useState(false)
-    console.log(isOpen)
     const location = useLocation()
     return (
         <footer className={s.navigateContainer}>

@@ -53,12 +53,6 @@ const iconsForNavBar: IconsForNavBarType[] = [
         className: 'homeWrapper',
     },
     {
-        iconId: 'public_relation',
-        link: 'friends',
-        viewBox: '0 0 38 38',
-        className: 'friendsWrapper',
-    },
-    {
         iconId: 'like',
         link: 'profiles-with-like',
         viewBox: '0 -3 40 40',
@@ -69,6 +63,12 @@ const iconsForNavBar: IconsForNavBarType[] = [
         link: 'candles',
         viewBox: '0 0 28 28',
         className: 'candlesWrapper',
+    },
+    {
+        iconId: 'public_relation',
+        link: 'friends',
+        viewBox: '0 0 38 38',
+        className: 'friendsWrapper',
     },
     {
         iconId: 'messenger',

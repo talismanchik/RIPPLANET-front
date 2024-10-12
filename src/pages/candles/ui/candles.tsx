@@ -1,19 +1,40 @@
-import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
+import {PhoneHeader} from "../../../features/phoneHeader/phoneHeader.tsx";
 import s from "./candles.module.scss";
-import {Input} from "../../shared/ui/input/input.tsx";
-import {candles, feelings, profilesHub} from "../../services/store.ts";
-import {ButtonLink} from "../../shared/ui/buttonLink/buttonLink.tsx";
+import {Input} from "../../../shared/ui/input/input.tsx";
+import {profilesHub} from "../../../services/store.ts";
+import {ButtonLink} from "../../../shared/ui/buttonLink/buttonLink.tsx";
 import {useLocation} from "react-router-dom";
-import {useState} from "react";
-import {MarketContainer} from "../../features/marketContainer/marketContainer.tsx";
+import {useEffect, useState} from "react";
+import {MarketContainer} from "../../../features/marketContainer/marketContainer.tsx";
 import * as React from "react";
-import {useWindowWidth} from "../../shared/hooks/useWindowWidth.ts";
-import {ProfilesWithSearch} from "../../features/profilesWithSearch/profilesWithSearch.tsx";
+import {useWindowWidth} from "../../../shared/hooks/useWindowWidth.ts";
+import {ProfilesWithSearch} from "../../../features/profilesWithSearch/profilesWithSearch.tsx";
+import {useAppDispatch, useAppSelector} from "../../../app/store.ts";
+import {FeelingsType} from "../api/candlesType.ts";
+import {getFeelingsTC} from "../model/slice.ts";
 
 export const Candles = () => {
+
+    const dispatch = useAppDispatch()
+    const feelings = useAppSelector<FeelingsType[]>(state => state.feelings)
     const isVisible = useWindowWidth(1024)
     const location = useLocation();
-    const memoryHub = location.pathname === '/candles' ? candles : feelings
+    let memoryHub = feelings
+    useEffect(() => {
+        /* candlesApi.getCandles()
+             .then(res => {return setFeel(res.data.data)})
+             .catch(rej=>console.log(rej))*/
+        dispatch(getFeelingsTC())
+    }, [])
+    const onClickFeelings = () => {
+         memoryHub = [...feelings]
+    }
+
+
+
+
+    console.log(feelings)
+
 
     const [isOpenMarket, setIsOpenMarket] = useState(false)
     const [activeProfile, setActiveProfile] = useState('')
@@ -41,6 +62,7 @@ export const Candles = () => {
                         <ButtonLink className={`${s.item1} ${location.pathname === '/candles' ? s.active : ''}`}
                                     link={'/candles'} title={'Свечи'}/>
                         <ButtonLink className={`${s.item2} ${location.pathname === '/feelings' ? s.active : ''}`}
+                                    onClick={onClickFeelings}
                                     link={'/feelings'} title={'Чувства'}/>
                         <div className={`${s.inputWrapper} ${s.item3}`}>
                             <Input placeholder={'Подпишите свою свечу'}/>
