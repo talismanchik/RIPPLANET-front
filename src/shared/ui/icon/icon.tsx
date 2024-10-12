@@ -63,6 +63,8 @@ type Props = {
         | 'download'
         | 'full_screen'
         | 'expand'
+        | 'share'
+
 
     viewBox?: string
     width?: string

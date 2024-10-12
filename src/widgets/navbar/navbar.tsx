@@ -19,7 +19,7 @@ export const Navbar = () => {
                     {iconsForNavBar.map(icon => {
                         return (
                             <NavLink key={icon.iconId} to={icon.link}
-                                     className={location.pathname === `/${icon.link}` ? s.active : ''}>
+                                     className={`${location.pathname === `/${icon.link}` || location.pathname === '/feelings' && icon.link === 'candles' ? s.active : ''} `}>
                                 <li className={`${s.iconWrapper} ${s[icon.className]}`}>
                                     <Icon iconId={icon.iconId} width={'36px'} height={'36px'} viewBox={icon.viewBox}/>
                                 </li>
@@ -53,6 +53,12 @@ const iconsForNavBar: IconsForNavBarType[] = [
         className: 'homeWrapper',
     },
     {
+        iconId: 'public_relation',
+        link: 'friends',
+        viewBox: '0 0 38 38',
+        className: 'friendsWrapper',
+    },
+    {
         iconId: 'like',
         link: 'profiles-with-like',
         viewBox: '0 -3 40 40',
@@ -63,12 +69,6 @@ const iconsForNavBar: IconsForNavBarType[] = [
         link: 'candles',
         viewBox: '0 0 28 28',
         className: 'candlesWrapper',
-    },
-    {
-        iconId: 'feelings',
-        link: 'feelings',
-        viewBox: '2 2 45 45',
-        className: 'feelingsWrapper',
     },
     {
         iconId: 'messenger',
@@ -91,9 +91,6 @@ const iconsForNavBar: IconsForNavBarType[] = [
 ]
 export type IconsForNavBarType = {
     iconId:
-        | 'filters'
-        | 'search'
-        | 'avatar'
         | 'home'
         | 'candle'
         | 'feelings'
@@ -101,12 +98,8 @@ export type IconsForNavBarType = {
         | 'like'
         | 'plus'
         | 'plaques'
-        | 'contactUs'
-        | 'arrow_back'
-        | 'eye_outline'
-        | 'eye_off_outline'
         | 'messenger'
-        | 'close'
+        | 'public_relation'
         | 'tree',
     link: string,
     width?: string,

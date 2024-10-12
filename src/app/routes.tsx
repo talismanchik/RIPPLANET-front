@@ -22,6 +22,7 @@ import {Tree} from "../pages/tree/tree.tsx";
 import {Profile} from "../pages/profile/profile.tsx";
 import {ProfileCandles} from "../features/profile/candles/profileCandles.tsx";
 import {MemoryWall} from "../features/profile/memoryWall/memoryWall.tsx";
+import {Friends} from "../pages/friends/friends.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path: "/home",
                 element: <ProfilesPage/>,
+            },
+            {
+                path: "/friends",
+                element: <Friends/>,
             },
             {
                 path: "/profiles-with-like",

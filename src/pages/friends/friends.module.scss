@@ -1,0 +1,83 @@
+.FriendsContainer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-inline: var(--padding);
+  padding-bottom: var(--padding-m);
+
+  .headerWrapper {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding-bottom: 1px;
+    z-index: 1;
+
+    .searchBlock {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: var(--padding-m);
+      position: sticky;
+      z-index: 1;
+      top: 0;
+      padding: var(--padding);
+
+      .tabsContainer {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 1fr 1fr;
+
+        .tabWrapper {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 40px;
+          color: var(--color-text-light-blue);
+          border-radius: var(--border-radius-m);
+          border: 1px solid var(--color-secondary-light-blue);
+
+          &:hover:not(.active) {
+            background-color: rgba(0, 0, 0, 0.05);
+          }
+          &:active:not(.active) {
+            background-color: rgba(0, 0, 0, 0.1);
+            span{
+             scale: 0.97;
+            }
+          }
+        }
+        .active{
+          background-color: var(--color-accent);
+          border: none;
+          color: var(--color-bg);
+        }
+      }
+
+      .searchInput {
+      }
+    }
+
+    background: linear-gradient(0deg, transparent, var(--color-bg) 20%);
+
+  }
+
+  @media (min-width: 700px) {
+    padding-inline: var(--padding-inline);
+  }
+  @media (max-width: 1024px) {
+    position: fixed;
+    top: 0;
+  }
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
+}
+
+.tabWrapper {
+  composes: userSelect from '../../app/styles/templates.module.scss';
+}
