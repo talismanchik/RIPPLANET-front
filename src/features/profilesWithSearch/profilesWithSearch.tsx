@@ -1,40 +1,41 @@
 import s from './profilesWithSearch.module.scss'
 import {Input} from "../../shared/ui/input/input.tsx";
-import {ProfileType} from "../../services/store.ts";
 import {ProfileCard} from "../profileCard/profileCard.tsx";
+import {useAppDispatch, useAppSelector} from "../../app/store.ts";
+import {DeceasedsProfilesType} from "../../pages/profilesPage/api/deceasedsProfilesType.ts";
+import {useEffect} from "react";
+import {getDeceasedsTC} from "../../pages/profilesPage/model/deceasedsProfilesSlice.ts";
 
 type ProfilesWithSearchType = {
-    profiles: ProfileType[]
+
     className?: string
-    activeProfile?: string
-    onChange?: (id: string) => void
+    activeProfile?: number
+    onChange?: (id: number) => void
 }
 
 export const ProfilesWithSearch = ({
-                                       profiles,
+
                                        activeProfile,
                                        onChange,
                                        className
                                    }: ProfilesWithSearchType) => {
+    const dispatch = useAppDispatch()
+    const deceaseds = useAppSelector<DeceasedsProfilesType[]>(state => state.deceaseds)
+
+    useEffect(() => {
+        deceaseds.length == 0 && dispatch(getDeceasedsTC())
+    }, [])
+
     return (
         <div className={`${s.profilesWrapper} ${className}`}>
             <div className={s.textAreaWrapperInProfiles}>
                 <Input variant={"searchDecoration"} placeholder={'Поиск'}/>
             </div>
             <div className={s.profilesContainer}>
-                {profiles.map(profile => {
-                    return <ProfileCard name={profile.name}
-                                        years={profile.years}
-                                        age={profile.age}
-                                        country={profile.country}
-                                        like={profile.like}
+                {deceaseds.map(profile => {
+                    return <ProfileCard profile={profile}
                                         onChange={onChange}
-                                        photo={profile.photo}
-                                        nameEng={profile.nameEng}
-                                        isMyCard={profile.isMyCard}
-                                        isActive={activeProfile === profile.id}
-                                        id={profile.id}
-                                        key={profile.id}
+                                        isActive = {activeProfile === profile.id}
                     />
                 })}
             </div>

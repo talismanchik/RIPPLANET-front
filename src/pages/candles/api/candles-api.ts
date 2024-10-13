@@ -1,7 +1,10 @@
 import {baseApi} from "../../../services/baseApi.ts";
 
 export const candlesApi = {
-    getCandles(){
+    getFeelings(){
         return baseApi.get('feelings')
+    },
+    getCandles(){
+        return baseApi.get('candles')
     },
 }

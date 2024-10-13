@@ -1,10 +1,14 @@
 import {AnyAction, combineReducers, configureStore, ThunkDispatch} from "@reduxjs/toolkit";
 import {thunk} from "redux-thunk";
-import {feelingReducer} from "../pages/candles/model/slice.ts";
+import {feelingReducer} from "../pages/candles/model/feelingsSlice.ts";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
+import {candlesReducer} from "../pages/candles/model/candlesSlice.ts";
+import {deceasedsReducer} from "../pages/profilesPage/model/deceasedsProfilesSlice.ts";
 
 const rootReducer = combineReducers({
-        feelings: feelingReducer
+        feelings: feelingReducer,
+        candles: candlesReducer,
+        deceaseds: deceasedsReducer,
     }
 )
 export type AppRootStateType = ReturnType<typeof rootReducer>

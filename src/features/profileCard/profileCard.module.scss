@@ -11,7 +11,7 @@
   overflow: hidden;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--color-bg-block);
 
   .profileCardImgWrapper {
     display: flex;
@@ -147,7 +147,7 @@
   &:hover {
     scale: 1.01;
     transition: 0.1s;
-    background-color: rgba(196, 196, 196, 0.5);
+    background-color: #e7f3ff;
   }
 
   @media (max-width: 1200px) {

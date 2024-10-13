@@ -1,5 +1,5 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
-import {ProfilesPage} from "../pages/profilesPage/profilesPage.tsx";
+import {ProfilesPage} from "../pages/profilesPage/ui/profilesPage.tsx";
 import {ProfilesWithLikePage} from "../pages/profilesWithLikePage/profilesWithLikePage.tsx";
 import App from "./App.tsx";
 import {Candles} from "../pages/candles/ui/candles.tsx";

@@ -7,7 +7,8 @@
   grid-template-columns: 1fr;
   grid-template-rows: 83px 1fr;
   padding-inline: var(--padding);
-  padding-bottom: var(--padding-m);
+  padding-block: var(--padding);
+
 
   .tabSwitcher {
     top: 0;

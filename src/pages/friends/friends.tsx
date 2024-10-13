@@ -2,11 +2,20 @@ import s from './friends.module.scss'
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import {Input} from "../../shared/ui/input/input.tsx";
 import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
-import {profilesHub} from "../../services/store.ts";
-import {useState} from "react";
+ import {useEffect, useState} from "react";
 import {Typography} from "../../shared/ui/typography/typography.tsx";
+import {useAppDispatch, useAppSelector} from "../../app/store.ts";
+import {DeceasedsProfilesType} from "../profilesPage/api/deceasedsProfilesType.ts";
+import {getDeceasedsTC} from "../profilesPage/model/deceasedsProfilesSlice.ts";
 export const Friends = () => {
     const [tab, setTab] = useState('alive')
+
+    const dispatch = useAppDispatch()
+    const deceaseds = useAppSelector<DeceasedsProfilesType[]>(state => state.deceaseds)
+
+    useEffect(() => {
+        deceaseds.length == 0 && dispatch(getDeceasedsTC())
+    }, [])
 
     const onChangeTabSwitcher = (value: string) => {
         setTab(value)
@@ -32,7 +41,7 @@ export const Friends = () => {
                     </div>
                 </div>
             </div>
-            <ProfilesContainer open={toOpen} profiles={profilesHub}/>
+            <ProfilesContainer open={toOpen} profiles={deceaseds}/>
         </div>
     );
 };

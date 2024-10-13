@@ -3,7 +3,7 @@ import {createSlice, Dispatch, PayloadAction} from "@reduxjs/toolkit";
 import {candlesApi} from "../api/candles-api.ts";
 
 const initialState: FeelingsType[] = []
-const slice = createSlice({
+const feelingsSlice = createSlice({
     name: 'feelings',
     initialState: initialState,
     reducers: {
@@ -14,13 +14,13 @@ const slice = createSlice({
     }
 })
 
-export const feelingReducer = slice.reducer
-export const {getFeelingsAC}=slice.actions
+export const feelingReducer = feelingsSlice.reducer
+export const {getFeelingsAC}=feelingsSlice.actions
 
 export const getFeelingsTC = () => {
     return (dispatch: Dispatch) => {
 
-        candlesApi.getCandles()
+        candlesApi.getFeelings()
             .then(res => {
                 dispatch(getFeelingsAC({ feelings: res.data.data}))
             })
