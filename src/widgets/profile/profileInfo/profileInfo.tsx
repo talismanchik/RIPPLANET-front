@@ -97,7 +97,7 @@ export const ProfileInfo = ({profile}: Props) => {
                     {
                         profile.grave_photo && profile.grave_photo.map(el => {
                             return (
-                                <div className={s.photoContainer}>
+                                <div key={el} className={s.photoContainer}>
                                     <img alt={'photo'} src={`${import.meta.env.VITE_BASE_URL}${el}`}/>
                                 </div>
                             )
@@ -131,7 +131,7 @@ export const ProfileInfo = ({profile}: Props) => {
                     {
                         profile.photos.map(el => {
                             return (
-                                <div className={s.photoContainer}>
+                                <div key={el} className={s.photoContainer}>
                                     <img alt={'photo'} src={`${import.meta.env.VITE_BASE_URL}${el}`}/>
                                 </div>
                             )
