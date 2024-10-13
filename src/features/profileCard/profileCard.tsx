@@ -50,7 +50,7 @@ const setIsLike = ()=>{
                     <div className={s.descriptionWrapper}>
                         <Typography variant={'body1'} className={s.spansWrapper}>
                             <span className={s.years}>{dates.birthday? dates.birthday: 'неизвестно'} - {dates.death? dates.death: 'неизвестно'}</span>
-                            <span className={s.age}>{dates.life && `(${dates.life} лет)`}</span>
+                            <span className={s.age}>{dates.life && ` (${dates.life} лет) `}</span>
                             <span className={s.country}>{profile.country} </span>
                         </Typography>
                     </div>
