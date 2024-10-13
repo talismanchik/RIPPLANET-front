@@ -57,7 +57,7 @@ export const ProfileInfo = ({profile}: Props) => {
                 </div>
             </div>
             <Typography className={s.name} variant={'title'}>
-                {profile.first_name} {profile.last_name} {profile.middle_name}
+                {profile.first_name} {profile.middle_name} {profile.last_name}
             </Typography>
             <Typography className={s.age} variant={'body1'}>
                 {dates.birthday ? dates.birthday : 'неизвестно'} - {dates.death ? dates.death : 'неизвестно'}
