@@ -1,7 +1,3 @@
-import koby from '../assets/images/accaunts/koby.jpg'
-import kennedy from '../assets/images/accaunts/kennedy.jpg'
-import ferrari from '../assets/images/accaunts/ferrary.jpg'
-import perry from '../assets/images/accaunts/perry.jpg'
 import candle1 from '../assets/images/candles/candle1.webp'
 import candle2 from '../assets/images/candles/candle2.webp'
 import candle3 from '../assets/images/candles/candle3.webp'
@@ -29,7 +25,7 @@ import feelings3 from '../assets/images/feelings/feelings3.webp'
 import feelings4 from '../assets/images/feelings/feelings4.webp'
 import feelings5 from '../assets/images/feelings/feelings5.webp'
 import feelings6 from '../assets/images/feelings/feelings6.webp'
-export const profilesHub: ProfileType[] = [
+/*export const profilesHub: ProfileType[] = [
     {id: '1', name: 'Пушкин Александр Сергеевич', nameEng: 'Pushkin Alexander Sergeyevich', age: '37', years: '1799 - 1837', country: 'Россия', like: true, isMyCard: true},
     {id: '2', isMyCard: false, name: 'Kennedy John Fitzgerald', nameEng: 'Kennedy John Fitzgerald', age: '46', years: '1917 - 1963', country: 'США', like: false, photo: kennedy},
     {id: '3', isMyCard: false, name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
@@ -59,7 +55,7 @@ export const profilesHub: ProfileType[] = [
     {id: '27', isMyCard: false, name: 'Ferrari Enzo Anselmo Giuseppe Maria', nameEng: 'Ferrari Enzo Anselmo Giuseppe Maria', age: '90', years: '1898 - 1988', country: 'США', like: false, photo: ferrari},
     {id: '28', isMyCard: false, name: 'Perry Matthew Langford', nameEng: 'Perry Matthew Langford', age: '54', years: '1969 - 2023', country: 'США', like: true, photo: perry},
 
-]
+]*/
 
 
 export const candles: MemoryType[] = [

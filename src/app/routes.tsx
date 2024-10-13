@@ -19,7 +19,7 @@ import {Info} from "../widgets/userProfileBlocks/info/info.tsx";
 import {Language} from "../widgets/userProfileBlocks/language/language.tsx";
 import {BlackList} from "../widgets/userProfileBlocks/blackList/blackList.tsx";
 import {Tree} from "../pages/tree/tree.tsx";
-import {Profile} from "../pages/profile/profile.tsx";
+import {DeceasedProfile} from "../pages/profile/ui/deceasedProfile.tsx";
 import {ProfileCandles} from "../features/profile/candles/profileCandles.tsx";
 import {MemoryWall} from "../features/profile/memoryWall/memoryWall.tsx";
 import {Friends} from "../pages/friends/friends.tsx";
@@ -66,8 +66,8 @@ export const router = createBrowserRouter([
                 element: <Tree/>,
             },
             {
-                path: "/profile",
-                element: <Profile/>,
+                path: "/profile/:profileID",
+                element: <DeceasedProfile/>,
                 children: [
                     {
                         path: '',

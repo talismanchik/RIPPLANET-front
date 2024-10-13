@@ -2,8 +2,11 @@ import {Icon} from "../../shared/ui/icon/icon.tsx";
 import s from './profileCard.module.scss'
 import {Like} from "../../shared/decorators/like/like.tsx";
 import {Typography} from "../../shared/ui/typography/typography.tsx";
-import {NavLink} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {DeceasedsProfilesType} from "../../pages/profilesPage/api/deceasedsProfilesType.ts";
+import {useAppDispatch} from "../../app/store.ts";
+import {getDeceasedProfileTC} from "../../pages/profile/model/deceasedProfileSlice.ts";
+import {UseDate} from "../../shared/hooks/useDate.ts";
 
 type Props = {
     onChange?: (id: number) => void
@@ -11,13 +14,21 @@ type Props = {
     profile: DeceasedsProfilesType
 }
 export const ProfileCard = ({onChange, profile, isActive}: Props) => {
+    const dispatch = useAppDispatch()
+    const navigate = useNavigate()
+    console.log(onChange)
+    const onClickCard = (id:number)=>{
+        navigate(`/profile/${id}`)
+        dispatch(getDeceasedProfileTC(id))
+    }
 
 const setIsLike = ()=>{
     console.log('')
 }
+
+    const dates = UseDate(profile.date_of_birth, profile.date_of_death)
     return (
-        <NavLink to={'/profile'}>
-            <div onClick={() => onChange != null && onChange(profile.id)}
+            <div onClick={() => onClickCard(profile.id)}
                  className={`${s.profileCardContainer} ${isActive ? s.activeContainer : ''}`}>
                 <div className={s.profileCardImgWrapper}>
                     {
@@ -38,8 +49,8 @@ const setIsLike = ()=>{
                     </div>
                     <div className={s.descriptionWrapper}>
                         <Typography variant={'body1'} className={s.spansWrapper}>
-                            <span className={s.years}>{ new Date(profile.date_of_birth).getFullYear()}-{ new Date(profile.date_of_death).getFullYear()}</span>
-                            <span className={s.age}> (0) </span>
+                            <span className={s.years}>{dates.birthday? dates.birthday: 'неизвестно'} - {dates.death? dates.death: 'неизвестно'}</span>
+                            <span className={s.age}>{dates.life && `(${dates.life} лет)`}</span>
                             <span className={s.country}>{profile.country} </span>
                         </Typography>
                     </div>
@@ -54,7 +65,6 @@ const setIsLike = ()=>{
                 </div>
                 {/*{isActive && <SelectedIcon className={s.selectedIcon}/>}*/}
             </div>
-        </NavLink>
     );
 };
 

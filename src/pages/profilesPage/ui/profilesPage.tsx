@@ -13,14 +13,13 @@ export const ProfilesPage = () => {
    /* const onChangeTabSwitcher = (value: string) => {
         setTab(value)
     }*/
-    const toOpen =()=>{
-    }
+
     return (
         <div className={s.profilesPageContainer}>
 {/*
             <TabSwitcher className={s.tabSwitcher} items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>
 */}
-            <ProfilesContainer open={toOpen} profiles={deceaseds}/>
+            <ProfilesContainer profiles={deceaseds}/>
         </div>
     );
 };

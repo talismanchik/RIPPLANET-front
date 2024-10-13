@@ -13,9 +13,6 @@ export const Friends = () => {
     const onChangeTabSwitcher = (value: string) => {
         setTab(value)
     }
-    const toOpen = () => {
-
-    }
     return (
         <div className={s.FriendsContainer}>
             <div className={s.headerWrapper}>
@@ -34,7 +31,7 @@ export const Friends = () => {
                     </div>
                 </div>
             </div>
-            <ProfilesContainer open={toOpen} profiles={deceaseds}/>
+            <ProfilesContainer profiles={deceaseds}/>
         </div>
     );
 };

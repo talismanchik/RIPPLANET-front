@@ -14,9 +14,7 @@ export const ProfilesWithLikePage = () => {
     const onChangeTabSwitcher = (value: string) => {
         setTab(value)
     }
-    const toOpen = () => {
 
-    }
 
 /*
     const FavoriteLikes = profilesHub.filter(profile=>profile.like)
@@ -30,7 +28,7 @@ export const ProfilesWithLikePage = () => {
                     <TabSwitcher className={s.tabSwitcher} items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>
                 </div>
             </div>
-            <ProfilesContainer open={toOpen} profiles={deceaseds}/>
+            <ProfilesContainer profiles={deceaseds}/>
         </div>
     );
 };

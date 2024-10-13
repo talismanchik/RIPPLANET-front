@@ -1,8 +1,6 @@
 import s from './profileInfo.module.scss'
-import ava from '../../../assets/images/accaunts/perry.jpg'
 import {Typography} from "../../../shared/ui/typography/typography.tsx";
 import {Button} from "../../../shared/ui/button/button.tsx";
-import {AddPhotoVideo} from "../../../features/addPhotoVideo/addPhotoVideo.tsx";
 import {Icon} from "../../../shared/ui/icon/icon.tsx";
 import {useState} from "react";
 import {Religion} from "../../../features/profile/religion/religion.tsx";
@@ -10,8 +8,15 @@ import {Family} from "../../../features/profile/family/family.tsx";
 import {Work} from "../../../features/profile/work/work.tsx";
 import {Education} from "../../../features/profile/education/education.tsx";
 import {Hobbies} from "../../../features/profile/hobbies/hobbies.tsx";
+import {DeceasedProfileType} from "../../../pages/profile/api/deceasedProfileType.ts";
+import {UseDate} from "../../../shared/hooks/useDate.ts";
 
-export const ProfileInfo = () => {
+type Props = {
+    profile: DeceasedProfileType
+}
+
+export const ProfileInfo = ({profile}: Props) => {
+
     const [activeTab, setActiveTab] = useState('religion')
 
     let tabWindow = <Religion/>
@@ -36,22 +41,30 @@ export const ProfileInfo = () => {
             break
     }
 
+    const dates = UseDate(profile.date_of_birth, profile.date_of_death)
+
+
     return (
         <div className={s.profileInfoContainer}>
             <div className={s.imgContainer}>
                 <div className={s.imgWrapper}>
-                    <img alt={'avatar'} src={ava}/>
+                    {
+                        profile.photos && profile.photos[0]
+                            ? <img alt={'photo'} src={`${import.meta.env.VITE_BASE_URL}${profile.photos[0]}`}/>
+                            : <Icon iconId={'avatar'} width={'96px'} height={'96px'}
+                                    viewBox={'-1.5 0 19 19'}/>
+                    }
                 </div>
             </div>
             <Typography className={s.name} variant={'title'}>
-                Свиридов Александр Александрович
+                {profile.first_name} {profile.last_name} {profile.middle_name}
             </Typography>
             <Typography className={s.age} variant={'body1'}>
-                1956-2023
-                <span className={s.egaSpan}> (67 лет)</span>
+                {dates.birthday ? dates.birthday : 'неизвестно'} - {dates.death ? dates.death : 'неизвестно'}
+                <span className={s.egaSpan}>{dates.life && ` (${dates.life} лет)`}</span>
             </Typography>
             <Typography variant={'body1'} className={s.deathReason}>
-                Причина смерти: COVID-19
+                {profile.cause_of_death && `Причина смерти: ${profile.cause_of_death}`}
             </Typography>
             <Button className={s.button}>
                 <Typography variant={"head1"}>
@@ -69,11 +82,11 @@ export const ProfileInfo = () => {
                         Место захоронения
                     </Typography>
                     <Typography variant={'subhead'} className={s.coordinates}>
-                        41.40338, 2.17403
+                        {profile.coordinates}
                     </Typography>
                 </div>
                 <Typography variant={'body1'}>
-                    Россия, г. Москва, ул. Наличная
+                    {profile.country}, {profile.city}
                 </Typography>
                 <Button className={s.mapButton}>
                     <Typography variant={'body1'}>
@@ -81,7 +94,15 @@ export const ProfileInfo = () => {
                     </Typography>
                 </Button>
                 <div className={s.locationPhotoContainer}>
-                    <AddPhotoVideo/>
+                    {
+                        profile.grave_photo && profile.grave_photo.map(el => {
+                            return (
+                                <div className={s.photoContainer}>
+                                    <img alt={'photo'} src={`${import.meta.env.VITE_BASE_URL}${el}`}/>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
             <div className={`${s.socialNetWorksContainer} ${s.profileInfoBlock}`}>
@@ -102,14 +123,23 @@ export const ProfileInfo = () => {
                     })}
                 </div>
             </div>
-            <div className={`${s.galleryContainer} ${s.profileInfoBlock}`}>
+            {profile.photos && profile.photos[0] && <div className={`${s.galleryContainer} ${s.profileInfoBlock}`}>
                 <Typography variant={"head1"}>
                     Галерея
                 </Typography>
                 <div className={s.locationPhotoContainer}>
-                    <AddPhotoVideo/>
+                    {
+                        profile.photos.map(el => {
+                            return (
+                                <div className={s.photoContainer}>
+                                    <img alt={'photo'} src={`${import.meta.env.VITE_BASE_URL}${el}`}/>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
-            </div>
+            </div>}
+
             <div className={`${s.tabsContainer} ${s.profileInfoBlock}`}>
                 <ul className={s.tabsWrapper}>
                     {tabs.map(tab => {

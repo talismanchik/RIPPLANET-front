@@ -4,11 +4,13 @@ import {feelingReducer} from "../pages/candles/model/feelingsSlice.ts";
 import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {candlesReducer} from "../pages/candles/model/candlesSlice.ts";
 import {deceasedsReducer} from "../pages/profilesPage/model/deceasedsProfilesSlice.ts";
+import {deceasedProfileReducer} from "../pages/profile/model/deceasedProfileSlice.ts";
 
 const rootReducer = combineReducers({
         feelings: feelingReducer,
         candles: candlesReducer,
         deceaseds: deceasedsReducer,
+        deceasedProfile: deceasedProfileReducer
     }
 )
 export type AppRootStateType = ReturnType<typeof rootReducer>
