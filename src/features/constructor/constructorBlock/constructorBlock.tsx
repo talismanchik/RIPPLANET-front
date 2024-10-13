@@ -10,7 +10,7 @@ type Props = {
 export const ConstructorBlock = ({title, children, className}:Props) => {
     return (
         <div className={`${s.constructorBlock} ${className}`}>
-            <Typography className={s.blockTitle} variant={"head1"}>{title}</Typography>
+            <Typography as='div' className={s.blockTitle} variant={"head1"}>{title}</Typography>
             {children}
         </div>
     );
