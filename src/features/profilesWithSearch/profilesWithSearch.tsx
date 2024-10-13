@@ -1,10 +1,7 @@
 import s from './profilesWithSearch.module.scss'
 import {Input} from "../../shared/ui/input/input.tsx";
 import {ProfileCard} from "../profileCard/profileCard.tsx";
-import {useAppDispatch, useAppSelector} from "../../app/store.ts";
-import {DeceasedsProfilesType} from "../../pages/profilesPage/api/deceasedsProfilesType.ts";
-import {useEffect} from "react";
-import {getDeceasedsTC} from "../../pages/profilesPage/model/deceasedsProfilesSlice.ts";
+import {useDeceasedsProfiles} from "../../shared/hooks/useDeceasedsProfiles.ts";
 
 type ProfilesWithSearchType = {
 
@@ -19,12 +16,7 @@ export const ProfilesWithSearch = ({
                                        onChange,
                                        className
                                    }: ProfilesWithSearchType) => {
-    const dispatch = useAppDispatch()
-    const deceaseds = useAppSelector<DeceasedsProfilesType[]>(state => state.deceaseds)
-
-    useEffect(() => {
-        deceaseds.length == 0 && dispatch(getDeceasedsTC())
-    }, [])
+    const deceaseds = useDeceasedsProfiles()
 
     return (
         <div className={`${s.profilesWrapper} ${className}`}>

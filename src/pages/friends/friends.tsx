@@ -2,20 +2,13 @@ import s from './friends.module.scss'
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import {Input} from "../../shared/ui/input/input.tsx";
 import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
- import {useEffect, useState} from "react";
+ import {useState} from "react";
 import {Typography} from "../../shared/ui/typography/typography.tsx";
-import {useAppDispatch, useAppSelector} from "../../app/store.ts";
-import {DeceasedsProfilesType} from "../profilesPage/api/deceasedsProfilesType.ts";
-import {getDeceasedsTC} from "../profilesPage/model/deceasedsProfilesSlice.ts";
+import {useDeceasedsProfiles} from "../../shared/hooks/useDeceasedsProfiles.ts";
 export const Friends = () => {
     const [tab, setTab] = useState('alive')
 
-    const dispatch = useAppDispatch()
-    const deceaseds = useAppSelector<DeceasedsProfilesType[]>(state => state.deceaseds)
-
-    useEffect(() => {
-        deceaseds.length == 0 && dispatch(getDeceasedsTC())
-    }, [])
+    const deceaseds = useDeceasedsProfiles()
 
     const onChangeTabSwitcher = (value: string) => {
         setTab(value)

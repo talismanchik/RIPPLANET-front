@@ -4,17 +4,11 @@ import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
 import {TabSwitcher} from "../../shared/ui/tabSwitcher/tabSwitcher.tsx";
 import {tabData} from "../../widgets/filter/filter.tsx";
-import {useEffect, useState} from "react";
-import {useAppDispatch, useAppSelector} from "../../app/store.ts";
-import {DeceasedsProfilesType} from "../profilesPage/api/deceasedsProfilesType.ts";
-import {getDeceasedsTC} from "../profilesPage/model/deceasedsProfilesSlice.ts";
+import {useState} from "react";
+ import {useDeceasedsProfiles} from "../../shared/hooks/useDeceasedsProfiles.ts";
 
 export const ProfilesWithLikePage = () => {
-    const dispatch = useAppDispatch()
-    const deceaseds = useAppSelector<DeceasedsProfilesType[]>(state => state.deceaseds)
-    useEffect(() => {
-        deceaseds.length == 0 && dispatch(getDeceasedsTC())
-    }, []);
+    const deceaseds = useDeceasedsProfiles()
     const [tab, setTab] = useState('alive')
 
     const onChangeTabSwitcher = (value: string) => {

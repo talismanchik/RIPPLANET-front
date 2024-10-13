@@ -1,20 +1,15 @@
  import s from './profilesPage.module.scss'
 import {ProfilesContainer} from "../../../features/profilesContainer/profilesContainer.tsx";
- import {useEffect} from "react";
-import {useAppDispatch, useAppSelector} from "../../../app/store.ts";
- import {DeceasedsProfilesType} from "../api/deceasedsProfilesType.ts";
-import {getDeceasedsTC} from "../model/deceasedsProfilesSlice.ts";
+
+ import {useDeceasedsProfiles} from "../../../shared/hooks/useDeceasedsProfiles.ts";
 
 export const ProfilesPage = () => {
-    const dispatch = useAppDispatch()
-    const deceaseds = useAppSelector<DeceasedsProfilesType[]>(state => state.deceaseds)
-/*
+    const deceaseds = useDeceasedsProfiles()
+   /*
     const [tab, setTab] = useState('alive')
 */
 
-    useEffect(() => {
-        deceaseds.length == 0 && dispatch(getDeceasedsTC())
-    }, []);
+
    /* const onChangeTabSwitcher = (value: string) => {
         setTab(value)
     }*/

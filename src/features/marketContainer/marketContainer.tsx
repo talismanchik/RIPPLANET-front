@@ -10,8 +10,6 @@ type Props = {
     candles?: CandlesType[]
 }
 export const MarketContainer = ({toClose, feelings, candles}: Props) => {
-    console.log( 'candles: ' + candles)
-    console.log( 'feelings: ' + feelings)
     const [isActive, setIsActive] = useState<number>()
 
     const setIsActiveHandler = (id: number) => {
