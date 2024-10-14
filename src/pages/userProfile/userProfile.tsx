@@ -3,6 +3,7 @@ import {Typography} from "../../shared/ui/typography/typography.tsx";
 import {Icon} from "../../shared/ui/icon/icon.tsx";
 import {NavLink, Outlet, useLocation} from "react-router-dom";
 import {ArrowForward} from "../../shared/decorators/arrowForward/arrowForward.tsx";
+import {ArrowBack} from "../../shared/decorators/arrowBack/arrowBack.tsx";
 
 export const UserProfile = () => {
     const location = useLocation();
@@ -10,10 +11,7 @@ export const UserProfile = () => {
         <div className={s.userProfileContainer}>
             <div className={`${s.blockContainer} ${s.leftBlockContainer}`}>
                 <div className={s.linkToBack}>
-                    <div className={s.arrowBack}></div>
-                    <Typography variant={'body2'}>
-                        Вернуться
-                    </Typography>
+                    <ArrowBack to={'/'}/>
                 </div>
                 <Typography className={s.title} as='span' variant={'largeTitle1'}>
                     Личный кабинет
