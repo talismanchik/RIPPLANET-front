@@ -1,7 +1,7 @@
 import s from './profilesWithSearch.module.scss'
 import {Input} from "../../shared/ui/input/input.tsx";
-import {ProfileCard} from "../profileCard/profileCard.tsx";
-import {useDeceasedsProfiles} from "../../shared/hooks/useDeceasedsProfiles.ts";
+import {ProfileCard} from "../card/profileCard.tsx";
+import {useDeceasedsProfiles} from "../../shared/hooks/requests/useDeceasedsProfiles.ts";
 
 type ProfilesWithSearchType = {
 

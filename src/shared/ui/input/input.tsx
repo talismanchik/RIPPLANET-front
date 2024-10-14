@@ -1,5 +1,4 @@
-import {ChangeEvent, ComponentPropsWithoutRef, forwardRef} from 'react'
-
+import {ComponentPropsWithoutRef, forwardRef} from 'react'
 import s from './input.module.scss'
 import {Icon} from "../icon/icon.tsx";
 import {Typography} from "../typography/typography.tsx";
@@ -9,7 +8,6 @@ export type InputProps = {
     clearField?: () => void
     error?: string
     placeholder?: string
-    onValueChange?: (value: string) => void
     variant?: 'eyeDecoration' | 'searchDecoration' | 'withoutDecoration'
 } & ComponentPropsWithoutRef<'input'>
 
@@ -20,9 +18,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className,
             clearField,
             error,
-            onChange,
-            onValueChange,
-            value,
             variant = 'withoutDecoration',
             placeholder,
             ...rest
@@ -31,10 +26,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     ) => {
         // const [closedEye, setClosedEye] = useState(true)
 
-        const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        /*const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
             onChange?.(e)
             onValueChange?.(e.currentTarget.value)
-        }
+        }*/
 
         return (
             <div className={s.container}>
@@ -44,10 +39,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         className={`${s.input} ${s[variant]} ${error ? 's.error!!!' : ''}`}
                         placeholder={placeholder}
                         name={rest.name}
-                        onChange={onChangeHandler}
+                        /*onChange={onChangeHandler}*/
                         ref={ref}
                         /*type={variant === 'eyeDecoration' && closedEye ? 'password' : 'text'}*/
-                        value={value}
+                        /*value={value}*/
                         {...rest}
                     />
                     {/*{variant === 'eyeDecoration' && (

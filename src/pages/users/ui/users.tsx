@@ -1,14 +1,15 @@
-import s from './friends.module.scss'
-import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
-import {Input} from "../../shared/ui/input/input.tsx";
-import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
+import s from './users.module.scss'
+import {PhoneHeader} from "../../../features/phoneHeader/phoneHeader.tsx";
+import {Input} from "../../../shared/ui/input/input.tsx";
+import {ProfilesContainer} from "../../../features/profilesContainer/profilesContainer.tsx";
  import {useState} from "react";
-import {Typography} from "../../shared/ui/typography/typography.tsx";
-import {useDeceasedsProfiles} from "../../shared/hooks/useDeceasedsProfiles.ts";
-export const Friends = () => {
+import {Typography} from "../../../shared/ui/typography/typography.tsx";
+import {useGetUsers} from "../../../shared/hooks/requests/useGetUsers.ts";
+import {UserCard} from "../../../features/card/userCard.tsx";
+export const Users = () => {
     const [tab, setTab] = useState('alive')
 
-    const deceaseds = useDeceasedsProfiles()
+    const users = useGetUsers()
 
     const onChangeTabSwitcher = (value: string) => {
         setTab(value)
@@ -31,7 +32,14 @@ export const Friends = () => {
                     </div>
                 </div>
             </div>
-            <ProfilesContainer profiles={deceaseds}/>
+            <ProfilesContainer >
+                {users.map(profile => {
+                    return <UserCard key={profile.id}
+                                        user={profile}
+
+                    />;
+                })}
+            </ProfilesContainer>
         </div>
     );
 };

@@ -5,12 +5,14 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from "react-redux";
 import {candlesReducer} from "../pages/candles/model/candlesSlice.ts";
 import {deceasedsReducer} from "../pages/profilesPage/model/deceasedsProfilesSlice.ts";
 import {deceasedProfileReducer} from "../pages/profile/model/deceasedProfileSlice.ts";
+import {usersReducer} from "../pages/users/model/usersSlice.ts";
 
 const rootReducer = combineReducers({
         feelings: feelingReducer,
         candles: candlesReducer,
         deceaseds: deceasedsReducer,
-        deceasedProfile: deceasedProfileReducer
+        deceasedProfile: deceasedProfileReducer,
+        users: usersReducer,
     }
 )
 export type AppRootStateType = ReturnType<typeof rootReducer>

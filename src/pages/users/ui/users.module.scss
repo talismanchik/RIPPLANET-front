@@ -79,5 +79,5 @@
 }
 
 .tabWrapper {
-  composes: userSelect from '../../app/styles/templates.module.scss';
+  composes: userSelect from '../../../app/styles/templates.module.scss';
 }

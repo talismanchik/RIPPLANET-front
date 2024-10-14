@@ -22,7 +22,7 @@ import {Tree} from "../pages/tree/tree.tsx";
 import {DeceasedProfile} from "../pages/profile/ui/deceasedProfile.tsx";
 import {ProfileCandles} from "../features/profile/candles/profileCandles.tsx";
 import {MemoryWall} from "../features/profile/memoryWall/memoryWall.tsx";
-import {Friends} from "../pages/friends/friends.tsx";
+import {Users} from "../pages/users/ui/users.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -39,7 +39,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/friends",
-                element: <Friends/>,
+                element: <Users/>,
             },
             {
                 path: "/profiles-with-like",

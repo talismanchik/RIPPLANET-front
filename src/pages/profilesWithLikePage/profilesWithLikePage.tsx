@@ -2,7 +2,8 @@
 import {Input} from "../../shared/ui/input/input.tsx";
 import {PhoneHeader} from "../../features/phoneHeader/phoneHeader.tsx";
 import {ProfilesContainer} from "../../features/profilesContainer/profilesContainer.tsx";
- import {useDeceasedsProfiles} from "../../shared/hooks/useDeceasedsProfiles.ts";
+ import {useDeceasedsProfiles} from "../../shared/hooks/requests/useDeceasedsProfiles.ts";
+ import {ProfileCard} from "../../features/card/profileCard.tsx";
 
 export const ProfilesWithLikePage = () => {
     const deceaseds = useDeceasedsProfiles()
@@ -20,7 +21,14 @@ export const ProfilesWithLikePage = () => {
                     {/*<TabSwitcher className={s.tabSwitcher} items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>*/}
                 </div>
             </div>
-            <ProfilesContainer profiles={deceaseds}/>
+            <ProfilesContainer >
+                {deceaseds.map(profile => {
+                    return <ProfileCard key={profile.id}
+                                        profile={profile}
+
+                    />;
+                })}
+            </ProfilesContainer>
         </div>
     );
 };

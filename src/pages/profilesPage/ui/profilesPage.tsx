@@ -1,7 +1,7 @@
  import s from './profilesPage.module.scss'
 import {ProfilesContainer} from "../../../features/profilesContainer/profilesContainer.tsx";
-
- import {useDeceasedsProfiles} from "../../../shared/hooks/useDeceasedsProfiles.ts";
+ import {useDeceasedsProfiles} from "../../../shared/hooks/requests/useDeceasedsProfiles.ts";
+ import {ProfileCard} from "../../../features/card/profileCard.tsx";
 
 export const ProfilesPage = () => {
     const deceaseds = useDeceasedsProfiles()
@@ -19,7 +19,14 @@ export const ProfilesPage = () => {
 {/*
             <TabSwitcher className={s.tabSwitcher} items={tabData} onValueChange={onChangeTabSwitcher} value={tab}/>
 */}
-            <ProfilesContainer profiles={deceaseds}/>
+            <ProfilesContainer >
+                {deceaseds.map(profile => {
+                    return <ProfileCard key={profile.id}
+                                        profile={profile}
+
+                    />;
+                })}
+            </ProfilesContainer>
         </div>
     );
 };

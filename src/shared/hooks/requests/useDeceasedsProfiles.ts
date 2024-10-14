@@ -1,7 +1,7 @@
-import {useAppDispatch, useAppSelector} from "../../app/store.ts";
-import {DeceasedsProfilesType} from "../../pages/profilesPage/api/deceasedsProfilesType.ts";
+import {useAppDispatch, useAppSelector} from "../../../app/store.ts";
+import {DeceasedsProfilesType} from "../../../pages/profilesPage/api/deceasedsProfilesType.ts";
 import {useEffect} from "react";
-import {getDeceasedsTC} from "../../pages/profilesPage/model/deceasedsProfilesSlice.ts";
+import {getDeceasedsTC} from "../../../pages/profilesPage/model/deceasedsProfilesSlice.ts";
 
 export const useDeceasedsProfiles = ()=>{
     const dispatch = useAppDispatch()

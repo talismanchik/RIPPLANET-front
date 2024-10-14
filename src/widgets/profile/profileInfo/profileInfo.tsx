@@ -9,7 +9,7 @@ import {Work} from "../../../features/profile/work/work.tsx";
 import {Education} from "../../../features/profile/education/education.tsx";
 import {Hobbies} from "../../../features/profile/hobbies/hobbies.tsx";
 import {DeceasedProfileType} from "../../../pages/profile/api/deceasedProfileType.ts";
-import {UseDate} from "../../../shared/hooks/useDate.ts";
+import {useDate} from "../../../shared/hooks/useDate.ts";
 
 type Props = {
     profile: DeceasedProfileType
@@ -41,7 +41,7 @@ export const ProfileInfo = ({profile}: Props) => {
             break
     }
 
-    const dates = UseDate(profile.date_of_birth, profile.date_of_death)
+    const {birthday, death, age} = useDate(profile.date_of_birth, profile.date_of_death)
 
 
     return (
@@ -60,8 +60,8 @@ export const ProfileInfo = ({profile}: Props) => {
                 {profile.first_name} {profile.middle_name} {profile.last_name}
             </Typography>
             <Typography className={s.age} variant={'body1'}>
-                {dates.birthday ? dates.birthday : 'неизвестно'} - {dates.death ? dates.death : 'неизвестно'}
-                <span className={s.egaSpan}>{dates.life && ` (${dates.life} лет)`}</span>
+                {birthday ? birthday : 'неизвестно'} - {death ? death : 'неизвестно'}
+                <span className={s.egaSpan}>{age && ` (${age} лет)`}</span>
             </Typography>
             <Typography variant={'body1'} className={s.deathReason}>
                 {profile.cause_of_death && `Причина смерти: ${profile.cause_of_death}`}

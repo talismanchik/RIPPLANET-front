@@ -9,10 +9,8 @@ export const UserProfile = () => {
     const location = useLocation();
     return (
         <div className={s.userProfileContainer}>
+            <ArrowBack className={s.arrowBack} to={'/'}/>
             <div className={`${s.blockContainer} ${s.leftBlockContainer}`}>
-                <div className={s.linkToBack}>
-                    <ArrowBack to={'/'}/>
-                </div>
                 <Typography className={s.title} as='span' variant={'largeTitle1'}>
                     Личный кабинет
                 </Typography>
