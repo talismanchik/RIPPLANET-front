@@ -13,7 +13,7 @@ export const DeceasedProfile = () => {
 
     return (
         <div className={s.profileContainer}>
-            <ArrowBack className={s.arrowBack}/>
+            <ArrowBack className={s.arrowBack} to={'/home'}/>
             <div className={s.plaquesWrapper}>
                 <img alt={'plaques'} src={forQr}/>
                 <Icon iconId={'plaques'}/>

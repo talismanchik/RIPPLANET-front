@@ -1,15 +1,16 @@
 import s from "./arrowBack.module.scss";
 import {Typography} from "../../ui/typography/typography.tsx";
-import { useNavigate} from "react-router-dom";
+import {To, useNavigate} from "react-router-dom";
 
 type Props = {
     className?: string
+    to?: To
 }
-export const ArrowBack = ({className}:Props) => {
+export const ArrowBack = ({className, to}:Props) => {
     const navigate = useNavigate()
     const backToHandler = () => {
         console.log('click')
-        navigate(-1)
+        to ? navigate(to) : navigate(-1)
     }
     return (
         <div  onClick={backToHandler} className={`${s.linkToBack} ${className}`}>

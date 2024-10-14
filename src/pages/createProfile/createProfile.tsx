@@ -8,6 +8,7 @@ import {Step3} from "../../widgets/createProfile/step3/step3.tsx";
 import {Step4} from "../../widgets/createProfile/step4/step4.tsx";
 import {Step5} from "../../widgets/createProfile/step5/step5.tsx";
 import {Step6} from "../../widgets/createProfile/step6/step6.tsx";
+import {ArrowBack} from "../../shared/decorators/arrowBack/arrowBack.tsx";
 
 export const CreateProfile = () => {
     const [stageNumber, setStageNumber] = useState<number>(1)
@@ -18,10 +19,7 @@ export const CreateProfile = () => {
         <div className={s.createProfileContainer}>
             <div className={`${s.leftBlock}`}>
                 <div className={s.linkToBack}>
-                    <div className={s.arrowBack}></div>
-                    <Typography variant={'body2'}>
-                        Вернуться
-                    </Typography>
+                    <ArrowBack/>
                 </div>
                 <Typography className={s.title} as='span' variant={'largeTitle1'}>Создание профиля</Typography>
                 <Stepper stageNumber={stageNumber} onChangeStage={setStageNumberHandler}/>
