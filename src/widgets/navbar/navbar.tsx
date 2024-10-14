@@ -36,7 +36,7 @@ export const Navbar = () => {
                 </ul>
             </nav>
             {popupIsOpen && <Popup onClose={setPopupIsOpenHandler} title={'Свяжитесь с нами'}>
-                <ContactUs/>
+                <ContactUs onSend={setPopupIsOpenHandler}/>
             </Popup>}
 
         </>
