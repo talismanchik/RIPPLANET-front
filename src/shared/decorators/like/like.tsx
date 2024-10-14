@@ -1,13 +1,16 @@
 import s from './like.module.scss'
 import {Icon} from "../../ui/icon/icon.tsx";
+import {MouseEventHandler} from "react";
 
 type LikeType = {
     isLike: boolean
-    setIsLike: (isLike: boolean) => void
+    setIsLike: () => void
 }
 export const Like = ({setIsLike, isLike}: LikeType) => {
-    const setIsLikeHandler = () => {
-        setIsLike(!isLike)
+    const setIsLikeHandler: MouseEventHandler<HTMLDivElement> = (e) => {
+
+        e.stopPropagation()
+        setIsLike()
     }
     return (
         <div className={s.likeWrapper} onClick={setIsLikeHandler} data-islike={isLike}>

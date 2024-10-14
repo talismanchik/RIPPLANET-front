@@ -7,6 +7,7 @@ import {DeceasedsProfilesType} from "../../pages/profilesPage/api/deceasedsProfi
 import {useAppDispatch} from "../../app/store.ts";
 import {getDeceasedProfileTC} from "../../pages/profile/model/deceasedProfileSlice.ts";
 import {UseDate} from "../../shared/hooks/useDate.ts";
+import {useState} from "react";
 
 type Props = {
     onChange?: (id: number) => void
@@ -22,8 +23,9 @@ export const ProfileCard = ({onChange, profile, isActive}: Props) => {
         dispatch(getDeceasedProfileTC(id))
     }
 
+    const [like, setLike] = useState(false)
 const setIsLike = ()=>{
-    console.log('')
+    setLike(!like)
 }
 
     const dates = UseDate(profile.date_of_birth, profile.date_of_death)
@@ -41,7 +43,7 @@ const setIsLike = ()=>{
                 <div className={s.profileCardBody}>
                     <div className={s.namesWrapper}>
                         <div className={s.nameWrapper}>
-                            <Typography variant={'titleSpecialBold'} className={s.name}>{profile.first_name} {profile.last_name} {profile.middle_name}</Typography>
+                            <Typography variant={'titleSpecialBold'} className={s.name}>{profile.first_name} {profile.middle_name} {profile.last_name}</Typography>
                         </div>
                         <div className={s.nameEngWrapper}>
                             <Typography className={s.nameEng} variant={'body2'}>{profile.first_name_en} {profile.last_name_en} {profile.middle_name_en}</Typography>
@@ -57,7 +59,7 @@ const setIsLike = ()=>{
                     {/*<div className={s.candles}></div>*/}
                 </div>
                 <div className={s.svgWrapper}>
-                     <Like isLike={profile.isFavorite} setIsLike={setIsLike}/>
+                     <Like isLike={like} setIsLike={setIsLike}/>
                     {/*{isMyCard &&
                         <Icon className={s.correcter} iconId={'correcter'} width={'26'} height={'26'}
                               viewBox={'11 11 30 30'}/>

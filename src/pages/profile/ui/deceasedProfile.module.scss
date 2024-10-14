@@ -6,6 +6,18 @@
   gap: 24px;
   overflow: hidden;
 
+  .plaquesWrapper{
+    position: absolute;
+    left: 0;
+    top: 100px;
+
+    svg{
+      position: absolute;
+      left: 38px;
+      top: 48px
+    }
+  }
+
   .arrowBack{
     position: absolute;
     top: 20px;

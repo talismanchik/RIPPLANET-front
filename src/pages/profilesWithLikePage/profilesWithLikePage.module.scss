@@ -19,7 +19,7 @@
 
     .searchBlock {
       display: grid;
-      grid-template-columns: 1fr 350px;
+      grid-template-columns: 1fr /*350px*/;
       gap: var(--padding-m);
       position: sticky;
       z-index: 1;

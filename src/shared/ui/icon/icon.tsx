@@ -64,6 +64,7 @@ type Props = {
         | 'full_screen'
         | 'expand'
         | 'share'
+        | 'qr'
 
 
     viewBox?: string
